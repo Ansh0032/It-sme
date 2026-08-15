@@ -1,8 +1,7 @@
 /**
  * ==========================================================================
- * ANSH SINGH — PERSONAL DEVELOPER PORTFOLIO
- * Vanilla JavaScript Engine
- * Particles • Typewriter • Modals • Observers • Form Mailto Handler
+ * ANSH SINGH — PERSONAL DEVELOPER PORTFOLIO (2026 EDITION)
+ * Vanilla JavaScript Interaction & Animation Engine
  * ==========================================================================
  */
 
@@ -48,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
       constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        // Slow subtle velocity
+        // Subtle, smooth velocity
         this.vx = (Math.random() - 0.5) * 0.45;
         this.vy = (Math.random() - 0.5) * 0.45;
         this.baseRadius = Math.random() * 1.6 + 0.8;
         this.radius = this.baseRadius;
         this.alpha = Math.random() * 0.4 + 0.2;
-        // Alternate between subtle cyan and purple tints
+        // Alternating electric cyan and purple tints
         this.color = Math.random() > 0.4 ? '6, 182, 212' : '139, 92, 246';
       }
 
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Screen edge wrapping
+        // Screen boundary wrapping
         if (this.x < -10) this.x = width + 10;
         else if (this.x > width + 10) this.x = -10;
 
@@ -94,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
       particles = [];
-      // Calculate particle count based on screen width (50 to 80 particles)
       const count = Math.min(80, Math.max(45, Math.floor(width / 22)));
       for (let i = 0; i < count; i++) {
         particles.push(new Particle());
@@ -110,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxDistance) {
-            // Distance-based alpha fade
             const lineAlpha = (1 - dist / maxDistance) * 0.16;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -124,9 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function animateParticles() {
-      if (document.hidden || prefersReducedMotion) {
-        return;
-      }
+      if (document.hidden || prefersReducedMotion) return;
       ctx.clearRect(0, 0, width, height);
 
       for (let i = 0; i < particles.length; i++) {
@@ -138,18 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
       animationFrameId = requestAnimationFrame(animateParticles);
     }
 
-    // Initial setup
+    // Initialize Canvas
     resizeCanvas();
     if (!prefersReducedMotion) {
       animateParticles();
     } else {
-      // Draw static particle constellation once for reduced motion
       ctx.clearRect(0, 0, width, height);
       particles.forEach(p => p.draw());
       connectParticles();
     }
 
-    // Resize listener with debouncing
+    // Resize handler
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
@@ -162,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 150);
     });
 
-    // Track mouse on window for canvas reaction
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -173,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
       mouse.y = null;
     });
 
-    // Pause canvas animation when tab is not visible
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         if (animationFrameId) cancelAnimationFrame(animationFrameId);
@@ -186,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     2. MOUSE-FOLLOWING AMBIENT GLOW
+     2. MOUSE-FOLLOWING CURSOR SPOTLIGHT
      ------------------------------------------------------------------------ */
   let mouseMoveTicking = false;
   window.addEventListener('mousemove', (e) => {
@@ -202,15 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ------------------------------------------------------------------------
      3. TYPEWRITER ANIMATION
-     Strictly verified roles: Student Developer, Chart Analyzer, Web Designer, Python
      ------------------------------------------------------------------------ */
   const typewriterElement = document.getElementById('typewriterText');
   if (typewriterElement) {
     const roles = [
-      'Student Developer',
-      'Chart Analyzer',
-      'Web Designer',
-      'Python'
+      'Building Projects',
+      'Learning AI & ML',
+      'Developing Web Experiences',
+      'Exploring Technology'
     ];
 
     let roleIndex = 0;
@@ -228,11 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
-        typingSpeed = 90;
+        typingSpeed = 85;
       }
 
       if (!isDeleting && charIndex === currentRole.length) {
-        // Pause at end of word
         typingSpeed = 1900;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
@@ -244,7 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(typeLoop, typingSpeed);
     }
 
-    // Start typing
     setTimeout(typeLoop, 500);
   }
 
@@ -348,86 +337,102 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.12,
+      threshold: 0.1,
       rootMargin: '0px 0px -40px 0px'
     });
 
     revealItems.forEach(item => revealObserver.observe(item));
   } else {
-    // Fallback for environments without IntersectionObserver
     revealItems.forEach(item => item.classList.add('revealed'));
   }
 
   /* ------------------------------------------------------------------------
-     7. SKILLS PROGRESS BARS ANIMATION OBSERVER
-     ------------------------------------------------------------------------ */
-  const skillCards = document.querySelectorAll('.skill-card');
-  if ('IntersectionObserver' in window) {
-    const skillObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const bar = entry.target.querySelector('.skill-progress-bar');
-          if (bar) {
-            bar.classList.add('animated');
-          }
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.2
-    });
-
-    skillCards.forEach(card => skillObserver.observe(card));
-  } else {
-    document.querySelectorAll('.skill-progress-bar').forEach(bar => bar.classList.add('animated'));
-  }
-
-  /* ------------------------------------------------------------------------
-     8. PROJECT DATA & INTERACTIVE MODAL
+     7. PROJECT DATA & INTERACTIVE MODAL
      ------------------------------------------------------------------------ */
   const projectsData = {
-    'chart-analyzer': {
-      title: 'Chart Analyzer — Indian/Forex/Crypto',
-      category: 'Event Project',
-      description: 'A browser-based analyzer that reads market data and suggests entry & exit with ~83% accuracy. Built and presented for a student event at La Martiniere College, Lucknow.',
-      context: 'Demonstrated as an interactive event project to showcase data extraction, algorithmic signal generation, and real-time frontend visualization.',
+    'trade-analysis': {
+      title: 'Intraday & Market Technical Analysis (Trade_with_Ansh)',
+      category: 'Technical Analysis',
+      description: 'A technical analysis experimentation project focused on reading market indicators, analyzing chart structures, and identifying potential Entry, Exit, Stop Loss, and Take Profit levels.',
+      context: 'Developed as an experimental analytical tool to explore algorithmic indicator integration with Python and TradingView charts.',
       features: [
-        'Live interactive chart visualizations with candlestick/trendline data',
-        'Algorithmic Entry and Exit signal indicators',
-        'Real-time accuracy tracking based on historical event test samples (~83% approx.)',
-        'CSV file data import and exported report generation',
-        'Intuitive, simplified dark-mode UI designed for quick inspection'
+        'Integration of RSI, MACD, Fibonacci retracements, and Alligator indicator logic',
+        'Visual structure identification for key Entry and Take Profit / Stop Loss levels',
+        'Data extraction and processing routines using Python',
+        'Technical charting visualization via TradingView scripts'
       ],
-      techStack: ['Python (Data Logic)', 'JavaScript (Visualization)', 'HTML & CSS', 'CSV Parsing'],
-      note: 'Academic / Event Project: The ~83% accuracy is an approximate metric achieved during college event demonstrations and is not financial trading advice.'
+      techStack: ['Python', 'Technical Analysis', 'TradingView', 'RSI / MACD', 'Fibonacci', 'Alligator'],
+      note: 'Student / Educational Project: Built for technical experimentation and indicator logic analysis. Does not constitute commercial financial advice.'
     },
-    'portfolio-pages': {
-      title: 'Portfolio & Demo Pages',
-      category: 'UI / Frontend',
-      description: 'Small landing pages and portfolio templates built using pure HTML/CSS and lightweight JavaScript. Designed to be fully responsive and social-ready.',
-      context: 'Created as modular design templates with focus on sleek layout architecture, typography hierarchy, and smooth CSS keyframe animations.',
+    'mindtrack-ai': {
+      title: 'MindTrack AI — Student Productivity Ecosystem',
+      category: 'AI / Productivity',
+      description: 'A student productivity ecosystem concept and project designed to assist study workflow planning, milestone tracking, and focus optimization.',
+      context: 'Created to solve real student scheduling friction by exploring intelligent task prioritization and structured revision tracking.',
       features: [
-        'Responsive single-page portfolio layout structures',
-        'Fluid sliding sections with pop and reveal animations',
-        'Social-ready metadata and accessible semantic structure',
-        'Zero external framework dependencies for ultra-fast load times'
+        'Academic revision workflow and syllabus milestone tracker',
+        'Focus session timer and study habit analytics',
+        'AI-driven study insights and revision scheduling concepts',
+        'Clean, accessible interface designed for rapid daily updates'
       ],
-      techStack: ['HTML5', 'CSS3', 'Lightweight JavaScript', 'Responsive Design'],
-      note: 'Showcases clean design principles, motion design, and cross-device interface crafting.'
+      techStack: ['Artificial Intelligence', 'Productivity Logic', 'Python', 'Interface Design'],
+      note: 'Student Project: Built to explore AI-assisted productivity tools for high school and academic workflows.'
     },
-    'automation-scripts': {
-      title: 'Automation Scripts',
-      category: 'Python',
-      description: 'Python automation scripts developed for small tasks including web data scraping, CSV parsing, and simple data pipelines.',
-      context: 'Employed for quick data extraction, formatting, and preprocessing in event projects and academic utilities.',
+    'bank-management': {
+      title: 'Bank Management System (Python + MySQL)',
+      category: 'Software / Team Project',
+      description: 'A complete student software project for managing customer bank accounts, transaction histories, fund transfers, and relational database records.',
+      context: 'Collaborative team project built with teammates Manas and Sourya, with Ansh serving as the Team Leader overseeing architecture, application logic, and database schema.',
       features: [
-        'Web scraping scripts for structured information retrieval',
-        'Robust CSV parsing and data cleansing routines',
-        'Simple multi-step data processing pipelines',
-        'Automated file formatting and export utilities'
+        'Account creation, authentication, and lifecycle management',
+        'Transaction execution (deposits, withdrawals, balance queries) with SQL transaction commits',
+        'Structured relational database schemas in MySQL',
+        'Python application layer integrating secure database connectivity'
       ],
-      techStack: ['Python', 'CSV Module', 'Web Scraping', 'Data Preprocessing'],
-      note: 'Built to automate repetitive data collection tasks for student and event workflows.'
+      techStack: ['Python', 'MySQL', 'Relational Database Design', 'CRUD Operations', 'Team Leadership'],
+      note: 'Academic Software Project: Team led by Ansh Singh with teammates Manas and Sourya.'
+    },
+    'portfolio-competition': {
+      title: 'Portfolio & Web Design Competition Pages',
+      category: 'UI / Competition Design',
+      description: 'Responsive landing pages, sliding one-page portfolio layouts, and competition frontend prototypes crafted using pure HTML, CSS, and lightweight JavaScript.',
+      context: 'Includes creative web design competition entries featuring concepts for a dynamic FIFA World Cup 2026 hub and an ISRO space exploration portal.',
+      features: [
+        'Responsive, modern UI architectures crafted without bulky framework overhead',
+        'Sliding section choreography and CSS keyframe animations',
+        'Thematic web design prototypes for FIFA 2026 and ISRO space showcases',
+        'Full semantic accessibility and cross-device responsiveness'
+      ],
+      techStack: ['HTML5', 'CSS3', 'Vanilla JavaScript', 'UI/UX Design', 'Competition Showcase'],
+      note: 'Showcases frontend craft, typography hierarchy, motion design, and competition design entries.'
+    },
+    'automation-pipelines': {
+      title: 'Automation Scripts & Data Pipelines',
+      category: 'Python / Automation',
+      description: 'A collection of Python scripts developed for task automation including web data scraping, CSV parsing, data formatting, and preprocessing pipelines.',
+      context: 'Built to automate repetitive academic, event, and data extraction workflows, delivering clean tabular data ready for analysis.',
+      features: [
+        'Automated web scraping and structured record extraction routines',
+        'CSV file parsing, sanitization, and tabular dataset formatting',
+        'Lightweight data pipelines for quick preprocessing in technology events',
+        'Modular script architecture for quick extensibility'
+      ],
+      techStack: ['Python', 'Web Scraping', 'CSV Module', 'Data Preprocessing'],
+      note: 'Built to automate data extraction tasks across various student and competition projects.'
+    },
+    'ai-workflows': {
+      title: 'AI-Assisted Prototyping & Antigravity Workflows',
+      category: 'AI Engineering / Web',
+      description: 'Experimentation with modern AI agent workflows (Antigravity) and structured prompt architecture to rapidly scaffold modular frontend systems and performant interfaces.',
+      context: 'Exploring the intersection of human engineering and agentic AI pair programming to accelerate web tool creation, motion design, and clean code architecture.',
+      features: [
+        'Agentic AI pair-programming workflows for rapid component specification',
+        'Zero-dependency vanilla JavaScript and high-performance CSS engineering',
+        'Modular design system planning and automated verification routines',
+        'Focus on web accessibility, smoothness, and zero-runtime bundle overhead'
+      ],
+      techStack: ['AI Workflows', 'Antigravity', 'Frontend Architecture', 'Vanilla JS', 'Motion Design'],
+      note: 'Explores cutting-edge AI-assisted engineering and modern web performance.'
     }
   };
 
@@ -447,7 +452,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modalCategory.textContent = data.category;
     modalTitle.textContent = data.title;
 
-    // Render detailed structured modal body
     modalBody.innerHTML = `
       <div>
         <h4 class="modal-section-title">Overview</h4>
@@ -474,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="modal-note-box">
-        <strong>Project Note:</strong> ${data.note}
+        <strong>Note:</strong> ${data.note}
       </div>
     `;
 
@@ -509,7 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modalBackdrop) modalBackdrop.addEventListener('click', closeProjectModal);
 
   /* ------------------------------------------------------------------------
-     9. ESCAPE KEY GLOBAL HANDLER
+     8. GLOBAL KEYBOARD HANDLERS (ESCAPE)
      ------------------------------------------------------------------------ */
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -523,7 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------------
-     10. TOAST NOTIFICATION SYSTEM
+     9. TOAST NOTIFICATION SYSTEM
      ------------------------------------------------------------------------ */
   const toastContainer = document.getElementById('toastContainer');
 
@@ -547,7 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     11. CONTACT FORM HANDLER (CLIENT-SIDE VALIDATION & MAILTO)
+     10. CONTACT FORM HANDLER (CLIENT VALIDATION & MAILTO)
      ------------------------------------------------------------------------ */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
@@ -562,7 +566,6 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Reset errors
       nameError.textContent = '';
       subjectError.textContent = '';
       messageError.textContent = '';
@@ -593,7 +596,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (hasError) return;
 
-      // Construct mailto link
       const recipient = 'ansh7224@outlook.com';
       const mailtoSubject = encodeURIComponent(subject);
       const mailtoBody = encodeURIComponent(`Hi Ansh,
@@ -606,8 +608,7 @@ ${message}
 Sent from your portfolio contact form.`);
       const mailtoUrl = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
 
-      // Open mail client
-      showToast('Opening your default email app to send message to ansh7224@outlook.com...', '✉️');
+      showToast('Opening your email client to send message to ansh7224@outlook.com...', '✉️');
 
       setTimeout(() => {
         window.location.href = mailtoUrl;
@@ -616,7 +617,7 @@ Sent from your portfolio contact form.`);
   }
 
   /* ------------------------------------------------------------------------
-     12. SMOOTH INTERNAL LINK SCROLLING
+     11. SMOOTH SCROLL FOR INTERNAL ANCHORS
      ------------------------------------------------------------------------ */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -625,7 +626,7 @@ Sent from your portfolio contact form.`);
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
-        const headerOffset = 80;
+        const headerOffset = 75;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
