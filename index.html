@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal developer portfolio of Ansh Singh, Student Developer (Class 11, La Martiniere College, Lucknow). Showcasing market chart analyzers, frontend interfaces, and Python automation projects." />
+  <title>Ansh Singh | Student Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Fixed Background Particle Canvas -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow Blobs & Grid Overlay -->
+  <div class="ambient-glows" aria-hidden="true">
+    <div class="glow-blob glow-purple"></div>
+    <div class="glow-blob glow-cyan"></div>
+    <div class="glow-blob glow-magenta"></div>
+    <div class="grid-overlay"></div>
+    <div class="cursor-spotlight"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="#hero" class="brand" aria-label="Ansh Singh - Home">
+        <span class="brand-monogram">AS</span>
+        <div class="brand-text">
+          <span class="brand-name">Ansh Singh</span>
+          <span class="brand-role">Student Developer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-nav-cta">
+          <span>Let's Talk</span>
+          <svg class="cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="brand">
+          <span class="brand-monogram">AS</span>
+          <div class="brand-text">
+            <span class="brand-name">Ansh Singh</span>
+            <span class="brand-role">Student Developer</span>
+          </div>
+        </div>
+        <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="drawer-links">
+        <a href="#hero" class="drawer-link">Home</a>
+        <a href="#skills" class="drawer-link">Skills</a>
+        <a href="#projects" class="drawer-link">Projects</a>
+        <a href="#contact" class="drawer-link">Contact</a>
+      </div>
+      <div class="drawer-footer">
+        <a href="#contact" class="btn btn-primary btn-block drawer-cta">
+          <span>Get in Touch</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero" aria-labelledby="heroHeading">
+      <div class="container hero-container">
+        <!-- Hero Text Column -->
+        <div class="hero-content reveal-item">
+          <div class="badge-pill">
+            <span class="pulse-dot"></span>
+            <span>Student Developer &bull; Class 11 &bull; Lucknow, India</span>
+          </div>
+
+          <h1 class="hero-title" id="heroHeading">
+            Hi, I'm <br />
+            <span class="gradient-text">Ansh Singh.</span>
+          </h1>
+
+          <p class="hero-tagline">
+            I make web tools, analyzers and clean sites.
+          </p>
+
+          <div class="hero-typewriter" aria-live="polite">
+            <span class="typewriter-prefix">Focus: </span>
+            <span class="typewriter-text" id="typewriterText">Student Developer</span>
+            <span class="typewriter-cursor" aria-hidden="true">|</span>
+          </div>
+
+          <p class="hero-description">
+            I build practical web projects like chart analysers for Indian, Forex and Crypto markets with ~83% approximate accuracy. Currently learning advanced web development while taking real projects for my portfolio.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>SEE PROJECTS</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>CONTACT ME</span>
+            </a>
+          </div>
+
+          <!-- Quick Information Bar -->
+          <div class="hero-quick-info" aria-label="Quick Highlights">
+            <div class="info-item">
+              <span class="info-label">Location</span>
+              <span class="info-value">Lucknow, India</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Availability</span>
+              <span class="info-value highlight-cyan">Open to Remote</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Experience</span>
+              <span class="info-value">Student Projects &amp; College Event</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Status</span>
+              <span class="info-value">Fresher</span>
+            </div>
+            <div class="info-item full-width">
+              <span class="info-label">Featured Work</span>
+              <span class="info-value">Crypto/Forex Analyzer <span class="badge-subtle">~83% accuracy (event project)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Developer Card & Orbit Visual -->
+        <div class="hero-visual reveal-item" aria-hidden="true">
+          <div class="orbit-stage">
+            <!-- Orbital Rings & Glowing Micro-Nodes -->
+            <div class="orbit-ring orbit-ring-1">
+              <span class="orbit-node node-1"></span>
+            </div>
+            <div class="orbit-ring orbit-ring-2">
+              <span class="orbit-node node-2"></span>
+              <span class="orbit-node node-3"></span>
+            </div>
+            <div class="orbit-ring orbit-ring-3">
+              <span class="orbit-node node-4"></span>
+            </div>
+
+            <!-- Central Glass Identity Card -->
+            <div class="identity-card" id="identityCard">
+              <div class="card-glass-shine"></div>
+              <div class="card-header">
+                <div class="card-avatar">AS</div>
+                <div class="card-status-indicator">
+                  <span class="status-dot"></span> Active
+                </div>
+              </div>
+              <div class="card-body">
+                <h3 class="card-name">Ansh Singh</h3>
+                <p class="card-role">Student Developer</p>
+                <div class="card-institution">La Martiniere College, Lucknow</div>
+                <div class="card-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Web</span>
+                </div>
+              </div>
+              <div class="card-footer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Lucknow, India</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge Card 1 -->
+            <div class="floating-badge badge-top-left">
+              <div class="badge-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                </svg>
+              </div>
+              <div class="badge-text">
+                <span class="badge-title">Creative</span>
+                <span class="badge-subtitle">Problem Solver</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge Card 2 -->
+            <div class="floating-badge badge-bottom-right">
+              <div class="badge-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="badge-text">
+                <span class="badge-title">Build</span>
+                <span class="badge-subtitle">Learn &bull; Create &bull; Improve</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills-section section-padding" id="skills" aria-labelledby="skillsHeading">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <div class="section-badge">Capabilities</div>
+          <h2 class="section-title" id="skillsHeading">What I work with.</h2>
+          <p class="section-subtitle">Technologies and tools I'm currently learning and using.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1: Java (75%) -->
+          <article class="skill-card reveal-item" data-skill-level="75">
+            <div class="skill-card-inner">
+              <div class="skill-header">
+                <div class="skill-icon-wrap icon-java">
+                  <span class="skill-monogram">&#9749;</span>
+                </div>
+                <div class="skill-title-wrap">
+                  <h3 class="skill-name">Java</h3>
+                  <span class="skill-tagline">Core Logic &amp; OOP Concepts</span>
+                </div>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress-bar" style="--target-width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-label="Java proficiency 75%"></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Skill Card 2: JavaScript (80%) -->
+          <article class="skill-card reveal-item" data-skill-level="80">
+            <div class="skill-card-inner">
+              <div class="skill-header">
+                <div class="skill-icon-wrap icon-js">
+                  <span class="skill-monogram">JS</span>
+                </div>
+                <div class="skill-title-wrap">
+                  <h3 class="skill-name">JavaScript</h3>
+                  <span class="skill-tagline">Interactive Web &amp; DOM Manipulation</span>
+                </div>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress-bar" style="--target-width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-label="JavaScript proficiency 80%"></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Skill Card 3: HTML & CSS (85%) -->
+          <article class="skill-card reveal-item" data-skill-level="85">
+            <div class="skill-card-inner">
+              <div class="skill-header">
+                <div class="skill-icon-wrap icon-htmlcss">
+                  <span class="skill-monogram">&lt;/&gt;</span>
+                </div>
+                <div class="skill-title-wrap">
+                  <h3 class="skill-name">HTML &amp; CSS</h3>
+                  <span class="skill-tagline">Semantic Markup, Responsive UI &amp; Styling</span>
+                </div>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress-bar" style="--target-width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-label="HTML and CSS proficiency 85%"></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Skill Card 4: Python (80%) -->
+          <article class="skill-card reveal-item" data-skill-level="80">
+            <div class="skill-card-inner">
+              <div class="skill-header">
+                <div class="skill-icon-wrap icon-python">
+                  <span class="skill-monogram">Py</span>
+                </div>
+                <div class="skill-title-wrap">
+                  <h3 class="skill-name">Python</h3>
+                  <span class="skill-tagline">Data Logic, Scripting &amp; Automation</span>
+                </div>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress-bar" style="--target-width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-label="Python proficiency 80%"></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Skill Card 5: Computer Science (83%) -->
+          <article class="skill-card reveal-item" data-skill-level="83">
+            <div class="skill-card-inner">
+              <div class="skill-header">
+                <div class="skill-icon-wrap icon-cs">
+                  <span class="skill-monogram">CS</span>
+                </div>
+                <div class="skill-title-wrap">
+                  <h3 class="skill-name">Computer Science</h3>
+                  <span class="skill-tagline">Algorithms, Logic &amp; Academic Fundamentals</span>
+                </div>
+                <span class="skill-percentage">83%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress-bar" style="--target-width: 83%;" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-label="Computer Science proficiency 83%"></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Skill Card 6: WordPress / Tools (72%) -->
+          <article class="skill-card reveal-item" data-skill-level="72">
+            <div class="skill-card-inner">
+              <div class="skill-header">
+                <div class="skill-icon-wrap icon-wp">
+                  <span class="skill-monogram">WP</span>
+                </div>
+                <div class="skill-title-wrap">
+                  <h3 class="skill-name">WordPress / Tools</h3>
+                  <span class="skill-tagline">CMS Configuration &amp; Web Utilities</span>
+                </div>
+                <span class="skill-percentage">72%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-progress-bar" style="--target-width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-label="WordPress and Tools proficiency 72%"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects-section section-padding" id="projects" aria-labelledby="projectsHeading">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <div class="section-badge">Portfolio</div>
+          <h2 class="section-title" id="projectsHeading">Selected work.</h2>
+          <p class="section-subtitle">Some of the projects I've built while learning and experimenting.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- PROJECT 01: Chart Analyzer -->
+          <article class="project-card reveal-item" data-project-id="chart-analyzer" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Chart Analyzer — Indian/Forex/Crypto">
+            <div class="project-card-inner">
+              <div class="project-preview-frame chart-preview">
+                <div class="preview-header">
+                  <span class="preview-dot red"></span>
+                  <span class="preview-dot yellow"></span>
+                  <span class="preview-dot green"></span>
+                  <span class="preview-title">market_analyzer.py &bull; Live Chart</span>
+                </div>
+                <div class="chart-mockup">
+                  <div class="chart-grid-lines">
+                    <div class="grid-line horizontal"></div>
+                    <div class="grid-line horizontal"></div>
+                    <div class="grid-line horizontal"></div>
+                    <div class="grid-line vertical"></div>
+                    <div class="grid-line vertical"></div>
+                    <div class="grid-line vertical"></div>
+                  </div>
+                  <!-- SVG Trendline and Markers -->
+                  <svg class="chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4" />
+                        <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.0" />
+                      </linearGradient>
+                    </defs>
+                    <path class="chart-area" d="M 0 100 Q 40 85, 75 90 T 150 45 T 225 65 T 300 20 L 300 120 L 0 120 Z" fill="url(#chartGradient)" />
+                    <path class="chart-line" d="M 0 100 Q 40 85, 75 90 T 150 45 T 225 65 T 300 20" fill="none" stroke="#22d3ee" stroke-width="2.5" />
+                  </svg>
+                  <!-- Signals & Labels -->
+                  <div class="chart-signal signal-buy" style="left: 25%; top: 68%;">
+                    <span class="signal-tag">BUY</span>
+                  </div>
+                  <div class="chart-signal signal-sell" style="left: 72%; top: 46%;">
+                    <span class="signal-tag">SELL</span>
+                  </div>
+                  <div class="chart-stat-chip">
+                    <span class="stat-dot"></span> Accuracy: ~83% (approx.)
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content">
+                <div class="project-meta">
+                  <span class="project-number">01</span>
+                  <span class="badge-category">Event Project</span>
+                </div>
+                <h3 class="project-title">Chart Analyzer — Indian/Forex/Crypto</h3>
+                <p class="project-description">
+                  A browser-based analyzer that reads market data and suggests entry &amp; exit with ~83% accuracy. Used in La Martiniere College event.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Chart Viz</span>
+                  <span class="tag">CSV Processing</span>
+                </div>
+                <div class="project-footer">
+                  <span class="view-details-link">
+                    <span>View Project Details</span>
+                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: Portfolio & Demo Pages -->
+          <article class="project-card reveal-item" data-project-id="portfolio-pages" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Portfolio & Demo Pages">
+            <div class="project-card-inner">
+              <div class="project-preview-frame browser-preview">
+                <div class="preview-header">
+                  <span class="preview-dot red"></span>
+                  <span class="preview-dot yellow"></span>
+                  <span class="preview-dot green"></span>
+                  <div class="preview-url-bar">https://portfolio.local/demo</div>
+                </div>
+                <div class="browser-mockup-body">
+                  <div class="mockup-nav">
+                    <div class="mockup-bar-sm"></div>
+                    <div class="mockup-pill-group">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                  <div class="mockup-hero-box">
+                    <div class="mockup-headline"></div>
+                    <div class="mockup-subtext"></div>
+                    <div class="mockup-btn-row">
+                      <div class="mockup-btn primary"></div>
+                      <div class="mockup-btn"></div>
+                    </div>
+                  </div>
+                  <div class="mockup-cards-row">
+                    <div class="mockup-mini-card"></div>
+                    <div class="mockup-mini-card active"></div>
+                    <div class="mockup-mini-card"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content">
+                <div class="project-meta">
+                  <span class="project-number">02</span>
+                  <span class="badge-category">UI / Frontend</span>
+                </div>
+                <h3 class="project-title">Portfolio &amp; Demo Pages</h3>
+                <p class="project-description">
+                  Small landing pages and portfolio sites built using HTML/CSS and lightweight JS. Responsive and social-ready single-page templates.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">HTML / CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Responsive UI</span>
+                  <span class="tag">Pop Animations</span>
+                </div>
+                <div class="project-footer">
+                  <span class="view-details-link">
+                    <span>View Project Details</span>
+                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: Automation Scripts -->
+          <article class="project-card reveal-item" data-project-id="automation-scripts" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Automation Scripts">
+            <div class="project-card-inner">
+              <div class="project-preview-frame editor-preview">
+                <div class="preview-header">
+                  <span class="preview-dot red"></span>
+                  <span class="preview-dot yellow"></span>
+                  <span class="preview-dot green"></span>
+                  <span class="preview-title">pipeline.py &bull; terminal</span>
+                </div>
+                <div class="code-editor-body">
+                  <div class="code-line"><span class="code-kw">import</span> <span class="code-lib">csv, requests</span></div>
+                  <div class="code-line"><span class="code-kw">def</span> <span class="code-fn">parse_market_data</span>(source):</div>
+                  <div class="code-line indent-1"><span class="code-var">records</span> = extract_entries(source)</div>
+                  <div class="code-line indent-1"><span class="code-kw">return</span> clean_pipeline(<span class="code-var">records</span>)</div>
+                  <div class="terminal-output-box">
+                    <span class="term-prompt">$</span> python pipeline.py --run<br />
+                    <span class="term-status ok">[OK]</span> 142 records parsed &bull; CSV exported
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content">
+                <div class="project-meta">
+                  <span class="project-number">03</span>
+                  <span class="badge-category">Python</span>
+                </div>
+                <h3 class="project-title">Automation Scripts</h3>
+                <p class="project-description">
+                  Python automation scripts for small tasks including web scraping, CSV parsing, and simple data pipelines used for data extraction.
+                </p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Web Scraping</span>
+                  <span class="tag">CSV Parsing</span>
+                  <span class="tag">Data Pipelines</span>
+                </div>
+                <div class="project-footer">
+                  <span class="view-details-link">
+                    <span>View Project Details</span>
+                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section section-padding" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <div class="section-badge">Get in touch</div>
+          <h2 class="section-title" id="contactHeading">Let's build something great.</h2>
+          <p class="section-subtitle">Have a project idea, collaboration or just want to connect? Send me a message.</p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Left Column: Verified Contact Information & Direct Action Buttons -->
+          <div class="contact-info-panel reveal-item">
+            <h3 class="panel-heading">Direct Contact</h3>
+            <p class="panel-lead">
+              Feel free to reach out for student collaborations, web development opportunities, or project discussions.
+            </p>
+
+            <div class="contact-cards-list">
+              <!-- Email Card -->
+              <div class="contact-item-card">
+                <div class="contact-item-icon icon-email">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="contact-item-label">Email Address</span>
+                  <a href="mailto:ansh7224@outlook.com" class="contact-item-link">ansh7224@outlook.com</a>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="contact-item-card">
+                <div class="contact-item-icon icon-phone">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="contact-item-label">Phone / WhatsApp</span>
+                  <a href="tel:+919616757224" class="contact-item-link">+91 9616757224</a>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="contact-item-card">
+                <div class="contact-item-icon icon-location">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="contact-item-label">Location &amp; Status</span>
+                  <span class="contact-item-val">Lucknow, India &bull; Open to Remote</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Contact Action Buttons -->
+            <div class="direct-action-buttons">
+              <a href="mailto:ansh7224@outlook.com" class="btn btn-primary btn-action">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Email Me</span>
+              </a>
+              <a href="https://wa.me/919616757224" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-action">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>Call / WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Mailto Message Form -->
+          <div class="contact-form-panel reveal-item">
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="senderName" class="form-label">Your Name <span class="required">*</span></label>
+                <input type="text" id="senderName" name="name" class="form-input" placeholder="e.g. Alex Sharma" required />
+                <span class="field-error" id="nameError" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="emailSubject" class="form-label">Subject <span class="required">*</span></label>
+                <input type="text" id="emailSubject" name="subject" class="form-input" placeholder="e.g. Collaboration on Web Project" required />
+                <span class="field-error" id="subjectError" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="emailMessage" class="form-label">Message <span class="required">*</span></label>
+                <textarea id="emailMessage" name="message" class="form-textarea" rows="5" placeholder="Write your message here..." required></textarea>
+                <span class="field-error" id="messageError" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="sendBtn">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <p class="form-notice">
+                <span class="notice-icon">&#8505;</span> Submitting compiles your note and opens your device's default email client addressed to <strong>ansh7224@outlook.com</strong>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Project Details Modal -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      <div class="modal-card">
+        <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="Close project modal">&times;</button>
+        <div class="modal-header">
+          <span class="modal-category" id="modalCategory">Event Project</span>
+          <h3 class="modal-title" id="modalTitle">Project Title</h3>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Dynamic Content Injected via script.js -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-action" id="modalCloseAction">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-branding">
+        <div class="brand">
+          <span class="brand-monogram">AS</span>
+          <div class="brand-text">
+            <span class="brand-name">Ansh Singh</span>
+            <span class="brand-role">Student Developer</span>
+          </div>
+        </div>
+        <p class="footer-school">Student Developer &bull; La Martiniere College, Lucknow</p>
+      </div>
+
+      <div class="footer-center">
+        <p class="footer-quote">&ldquo;Built with curiosity &amp; code.&rdquo;</p>
+        <p class="footer-copy">&copy; 2026 Ansh Singh. All rights reserved.</p>
+      </div>
+
+      <div class="footer-back-top">
+        <a href="#hero" class="back-to-top-btn" aria-label="Back to top">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+          <span>Top</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link to External JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
