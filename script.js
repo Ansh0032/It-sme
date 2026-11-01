@@ -1,7 +1,8 @@
 /**
  * ==========================================================================
- * ANSH SINGH — PERSONAL DEVELOPER PORTFOLIO (2026 EDITION)
- * Vanilla JavaScript Interaction & Animation Engine
+ * ANSH. — CREATIVE DEVELOPER PORTFOLIO
+ * Master Interaction & Animation Engine
+ * Particle Constellation • Cursor Lighting • Case Study Modals • Form Engine
  * ==========================================================================
  */
 
@@ -9,7 +10,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
-     1. CANVAS PARTICLE SYSTEM ENGINE
+     1. FIXED CANVAS PARTICLE CONSTELLATION ENGINE
      ------------------------------------------------------------------------ */
   const canvas = document.getElementById('particles');
   if (canvas) {
@@ -20,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let height = 0;
     let dpr = window.devicePixelRatio || 1;
 
-    // Mouse proximity position for canvas
+    // Mouse proximity position for canvas deflection
     const mouse = {
       x: null,
       y: null,
-      radius: 120
+      radius: 130
     };
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -47,14 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
       constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        // Subtle, smooth velocity
-        this.vx = (Math.random() - 0.5) * 0.45;
-        this.vy = (Math.random() - 0.5) * 0.45;
-        this.baseRadius = Math.random() * 1.6 + 0.8;
+        // Smooth editorial velocity
+        this.vx = (Math.random() - 0.5) * 0.42;
+        this.vy = (Math.random() - 0.5) * 0.42;
+        this.baseRadius = Math.random() * 1.5 + 0.8;
         this.radius = this.baseRadius;
-        this.alpha = Math.random() * 0.4 + 0.2;
-        // Alternating electric cyan and purple tints
-        this.color = Math.random() > 0.4 ? '6, 182, 212' : '139, 92, 246';
+        this.alpha = Math.random() * 0.45 + 0.2;
+        
+        // Palette distribution: 55% Indigo Blue, 35% Warm Ivory, 10% Crimson Red
+        const rand = Math.random();
+        if (rand < 0.55) {
+          this.color = '82, 105, 216'; // Indigo Blue
+        } else if (rand < 0.90) {
+          this.color = '233, 229, 220'; // Warm Ivory
+        } else {
+          this.color = '201, 37, 53'; // Crimson Red
+        }
       }
 
       update() {
@@ -68,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (this.y < -10) this.y = height + 10;
         else if (this.y > height + 10) this.y = -10;
 
-        // Mouse proximity reaction (gentle nudge)
+        // Gentle cursor deflection
         if (mouse.x !== null && mouse.y !== null) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
@@ -77,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
           if (dist < mouse.radius && dist > 0) {
             const force = (mouse.radius - dist) / mouse.radius;
             const angle = Math.atan2(dy, dx);
-            this.x -= Math.cos(angle) * force * 1.2;
-            this.y -= Math.sin(angle) * force * 1.2;
+            this.x -= Math.cos(angle) * force * 1.35;
+            this.y -= Math.sin(angle) * force * 1.35;
           }
         }
       }
@@ -93,14 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
       particles = [];
-      const count = Math.min(80, Math.max(45, Math.floor(width / 22)));
+      const count = Math.min(85, Math.max(45, Math.floor(width / 20)));
       for (let i = 0; i < count; i++) {
         particles.push(new Particle());
       }
     }
 
     function connectParticles() {
-      const maxDistance = 125;
+      const maxDistance = 120;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -112,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(139, 92, 246, ${lineAlpha})`;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(82, 105, 216, ${lineAlpha})`;
+            ctx.lineWidth = 0.75;
             ctx.stroke();
           }
         }
@@ -133,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
       animationFrameId = requestAnimationFrame(animateParticles);
     }
 
-    // Initialize Canvas
     resizeCanvas();
     if (!prefersReducedMotion) {
       animateParticles();
@@ -143,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
       connectParticles();
     }
 
-    // Resize handler
     let resizeTimeout;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimeout);
@@ -178,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     2. MOUSE-FOLLOWING CURSOR SPOTLIGHT
+     2. CURSOR SPOTLIGHT TRACKING & SCROLL PROGRESS BAR
      ------------------------------------------------------------------------ */
   let mouseMoveTicking = false;
   window.addEventListener('mousemove', (e) => {
@@ -192,16 +199,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  function updateScrollProgress() {
+    if (scrollProgressBar) {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgressBar.style.width = `${progress}%`;
+    }
+  }
+
   /* ------------------------------------------------------------------------
-     3. TYPEWRITER ANIMATION
+     3. TYPEWRITER DYNAMIC ROLE DISPLAY
      ------------------------------------------------------------------------ */
   const typewriterElement = document.getElementById('typewriterText');
   if (typewriterElement) {
     const roles = [
-      'Building Projects',
-      'Learning AI & ML',
-      'Developing Web Experiences',
-      'Exploring Technology'
+      'Interactive Web Experiences',
+      'On-Device AI Systems',
+      'Web Application Architecture',
+      'Algorithmic Analysis'
     ];
 
     let roleIndex = 0;
@@ -215,20 +232,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isDeleting) {
         typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
-        typingSpeed = 40;
+        typingSpeed = 35;
       } else {
         typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
-        typingSpeed = 85;
+        typingSpeed = 80;
       }
 
       if (!isDeleting && charIndex === currentRole.length) {
-        typingSpeed = 1900;
+        typingSpeed = 2000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        typingSpeed = 400;
+        typingSpeed = 450;
       }
 
       setTimeout(typeLoop, typingSpeed);
@@ -245,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
 
   function updateHeaderState() {
-    if (window.scrollY > 25) {
+    if (window.scrollY > 30) {
       siteHeader.classList.add('scrolled');
     } else {
       siteHeader.classList.remove('scrolled');
@@ -254,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateActiveNav() {
     let currentSectionId = '';
-    const scrollPosition = window.scrollY + 180;
+    const scrollPosition = window.scrollY + 200;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -277,10 +294,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     updateHeaderState();
     updateActiveNav();
+    updateScrollProgress();
   }, { passive: true });
 
   updateHeaderState();
   updateActiveNav();
+  updateScrollProgress();
 
   /* ------------------------------------------------------------------------
      5. MOBILE DRAWER NAVIGATION
@@ -337,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.1,
+      threshold: 0.08,
       rootMargin: '0px 0px -40px 0px'
     });
 
@@ -347,68 +366,98 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     7. PROJECT DATA & INTERACTIVE MODAL
+     7. PROJECT CASE STUDY DATA & MODAL SYSTEM
      ------------------------------------------------------------------------ */
   const projectsData = {
+    'studyvault-ai': {
+      title: 'StudyVault AI — Private Offline Desktop Study Assistant',
+      category: 'AI / Desktop Application',
+      description: 'An offline desktop study assistant engineered for 100% private, on-device AI inference powered by Tether's QVAC SDK. Eliminates cloud telemetry and recurring API token costs while delivering high-speed conversational assistance directly on local hardware.',
+      context: 'Built to solve the academic dilemma between generative AI study aids and privacy risks, enabling students and researchers to process proprietary syllabus notes and textbooks entirely on their machine.',
+      features: [
+        '100% On-Device AI inference running directly through Tether's QVAC SDK without sending data to external cloud servers',
+        'Electron desktop architecture packaged for Windows with native filesystem integration',
+        'Fast client interface crafted with React 19, Tailwind CSS, and Vite',
+        'Local Express service orchestrating document chunking, prompt pipelines, and QVAC inference execution',
+        'Offline capability ensuring full functionality in low-connectivity or air-gapped study environments'
+      ],
+      techStack: ['Tether QVAC SDK', 'Electron', 'React 19', 'Tailwind CSS', 'Vite', 'Express', 'Node.js'],
+      note: 'Verified Software Project: Fully compiled and packaged executable prototype with zero cloud dependency.'
+    },
     'trade-analysis': {
       title: 'Intraday & Market Technical Analysis (Trade_with_Ansh)',
-      category: 'Technical Analysis',
-      description: 'A technical analysis experimentation project focused on reading market indicators, analyzing chart structures, and identifying potential Entry, Exit, Stop Loss, and Take Profit levels.',
-      context: 'Developed as an experimental analytical tool to explore algorithmic indicator integration with Python and TradingView charts.',
+      category: 'Financial Engineering & Analytics',
+      description: 'A quantitative technical analysis engine integrating algorithmic momentum indicators, moving average structures, and Fibonacci levels to identify potential Entry, Stop Loss, and Take Profit zones in market data.',
+      context: 'Built as an experimental analytical environment to test indicator convergence and automate chart inspection through Python logic and TradingView visualization scripts.',
       features: [
-        'Integration of RSI, MACD, Fibonacci retracements, and Alligator indicator logic',
-        'Visual structure identification for key Entry and Take Profit / Stop Loss levels',
-        'Data extraction and processing routines using Python',
-        'Technical charting visualization via TradingView scripts'
+        'Mathematical indicator integration combining RSI, MACD, Fibonacci retracements, and Williams Alligator momentum',
+        'Algorithmic structure identification for key swing highs/lows, breakout confirmations, and risk-to-reward boundaries',
+        'Python backend logic for historical market dataset cleansing and signal backtesting',
+        'TradingView chart integration and lightweight interactive chart rendering'
       ],
-      techStack: ['Python', 'Technical Analysis', 'TradingView', 'RSI / MACD', 'Fibonacci', 'Alligator'],
-      note: 'Student / Educational Project: Built for technical experimentation and indicator logic analysis. Does not constitute commercial financial advice.'
+      techStack: ['Python', 'FastAPI', 'TradingView Scripting', 'Lightweight Charts', 'Technical Indicators', 'Pandas'],
+      note: 'Technical & Algorithmic Project: Developed strictly for market analysis and indicator experimentation. Does not constitute commercial financial advice.'
     },
-    'mindtrack-ai': {
-      title: 'MindTrack AI — Student Productivity Ecosystem',
-      category: 'AI / Productivity',
-      description: 'A student productivity ecosystem concept and project designed to assist study workflow planning, milestone tracking, and focus optimization.',
-      context: 'Created to solve real student scheduling friction by exploring intelligent task prioritization and structured revision tracking.',
+    'farewell-tickets': {
+      title: 'SPM ’27 Farewell Ticketing & Verification Platform',
+      category: 'Full Stack & Web Application',
+      description: 'A production-minded private ticketing web application designed for the SPM ’27 farewell event, incorporating secure invitation access, database persistence, automated QR code generation, camera-based QR ticket scanning, and email dispatch.',
+      context: 'Engineered as a real-world event management solution to eliminate manual paper ticketing, prevent counterfeit entries, and provide event administrators with real-time check-in metrics.',
       features: [
-        'Academic revision workflow and syllabus milestone tracker',
-        'Focus session timer and study habit analytics',
-        'AI-driven study insights and revision scheduling concepts',
-        'Clean, accessible interface designed for rapid daily updates'
+        'Secure guest authentication and personalized digital admission ticket generation',
+        'Embedded unique QR codes with encrypted verification tokens for high-speed gate scanning',
+        'Camera-based in-browser QR scanning utilizing html5-qrcode for instant gatekeeper validation',
+        'Relational data persistence managed with SQLite3 and robust Node/Express backend endpoints',
+        'Automated ticket delivery to attendee email accounts via Nodemailer integration'
       ],
-      techStack: ['Artificial Intelligence', 'Productivity Logic', 'Python', 'Interface Design'],
-      note: 'Student Project: Built to explore AI-assisted productivity tools for high school and academic workflows.'
+      techStack: ['React 18', 'TypeScript', 'Node.js / Express', 'SQLite3', 'HTML5 QR Scanner', 'Nodemailer', 'Tailwind'],
+      note: 'Production Event Software: Engineered with end-to-end authentication, scanning, and database transactions.'
     },
     'bank-management': {
       title: 'Bank Management System (Python + MySQL)',
-      category: 'Software / Team Project',
-      description: 'A complete student software project for managing customer bank accounts, transaction histories, fund transfers, and relational database records.',
-      context: 'Collaborative team project built with teammates Manas and Sourya, with Ansh serving as the Team Leader overseeing architecture, application logic, and database schema.',
+      category: 'Software Engineering & Relational DB',
+      description: 'A software project managing customer account lifecycles, debit/credit transactions, balance audits, and relational database integrity in MySQL. Developed in a collaborative team led by Ansh with teammates Manas and Sourya.',
+      context: 'Constructed to master complex multi-table relational database architecture, ACID transaction properties, and clean separation between application logic and persistent storage.',
       features: [
-        'Account creation, authentication, and lifecycle management',
-        'Transaction execution (deposits, withdrawals, balance queries) with SQL transaction commits',
-        'Structured relational database schemas in MySQL',
-        'Python application layer integrating secure database connectivity'
+        'Customer account creation, authentication, profile administration, and record deletion',
+        'Transactional execution (fund deposits, withdrawals, transfers) with SQL transaction commits and rollbacks',
+        'Structured relational database schemas in MySQL enforcing foreign keys and audit logging',
+        'Modular Python application layer connecting via mysql.connector with input sanitization'
       ],
-      techStack: ['Python', 'MySQL', 'Relational Database Design', 'CRUD Operations', 'Team Leadership'],
+      techStack: ['Python', 'MySQL', 'Relational Schemas', 'CRUD Operations', 'ACID Transactions', 'Team Leadership'],
       note: 'Academic Software Project: Team led by Ansh Singh with teammates Manas and Sourya.'
     },
-    'portfolio-competition': {
-      title: 'Portfolio & Web Design Competition Pages',
-      category: 'UI / Competition Design',
-      description: 'Responsive landing pages, sliding one-page portfolio layouts, and competition frontend prototypes crafted using pure HTML, CSS, and lightweight JavaScript.',
-      context: 'Includes creative web design competition entries featuring concepts for a dynamic FIFA World Cup 2026 hub and an ISRO space exploration portal.',
+    'mindtrack-ai': {
+      title: 'MindTrack AI — Productivity & Milestone Ecosystem',
+      category: 'AI / Productivity Ecosystem',
+      description: 'An AI/productivity-oriented student project concept designed to intelligently streamline study milestones, revision pacing, and task prioritization for high-demand academic workflows.',
+      context: 'Conceived to address the friction students encounter when organizing multi-subject preparation, synthesizing curriculum schedules into structured study sprints.',
       features: [
-        'Responsive, modern UI architectures crafted without bulky framework overhead',
-        'Sliding section choreography and CSS keyframe animations',
-        'Thematic web design prototypes for FIFA 2026 and ISRO space showcases',
-        'Full semantic accessibility and cross-device responsiveness'
+        'Intelligent revision milestone tracking with topic completion analytics',
+        'Productivity pacing engine scheduling focused study blocks and intervals',
+        'AI study insight synthesis providing personalized revision recommendations',
+        'Distraction-free dark aesthetic designed for rapid interaction on desktop and mobile'
       ],
-      techStack: ['HTML5', 'CSS3', 'Vanilla JavaScript', 'UI/UX Design', 'Competition Showcase'],
-      note: 'Showcases frontend craft, typography hierarchy, motion design, and competition design entries.'
+      techStack: ['Artificial Intelligence', 'Productivity Logic', 'Python', 'UI Architecture'],
+      note: 'Student Concept & Prototype: Built to explore AI-assisted milestone optimization in academic routines.'
+    },
+    'webdesign-competition': {
+      title: 'Portfolio & Web Design Competition Showcases',
+      category: 'Creative UI & Competition Entries',
+      description: 'Responsive landing templates and competition entries crafted using pure HTML, modern CSS, and lightweight JavaScript, featuring creative concepts for FIFA World Cup 2026 and ISRO space exploration.',
+      context: 'Showcasing frontend visual storytelling, typographic hierarchy, responsive layout adaptability, and CSS keyframe motion in competitive design events.',
+      features: [
+        'Dynamic FIFA World Cup 2026 portal concept with tournament countdown, match schedules, and stadium visualizers',
+        'ISRO space research showcase interface featuring rocket stage breakdowns and mission timelines',
+        'Zero framework bloat with pure semantic HTML5 and performance-optimized CSS3 animations',
+        'Complete cross-device adaptability tested across mobile, tablet, and widescreen viewports'
+      ],
+      techStack: ['HTML5', 'CSS3', 'Vanilla JavaScript', 'UI/UX Design', 'Competition Showcases'],
+      note: 'Creative Frontend Projects: Demonstrates rapid design prototyping, motion design, and competition craftsmanship.'
     },
     'automation-pipelines': {
       title: 'Automation Scripts & Data Pipelines',
-      category: 'Python / Automation',
+      category: 'Python & Automation',
       description: 'A collection of Python scripts developed for task automation including web data scraping, CSV parsing, data formatting, and preprocessing pipelines.',
       context: 'Built to automate repetitive academic, event, and data extraction workflows, delivering clean tabular data ready for analysis.',
       features: [
@@ -418,12 +467,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'Modular script architecture for quick extensibility'
       ],
       techStack: ['Python', 'Web Scraping', 'CSV Module', 'Data Preprocessing'],
-      note: 'Built to automate data extraction tasks across various student and competition projects.'
+      note: 'Utility Systems: Engineered to automate repetitive collection and sanitization tasks across various projects.'
     },
     'ai-workflows': {
       title: 'AI-Assisted Prototyping & Antigravity Workflows',
-      category: 'AI Engineering / Web',
-      description: 'Experimentation with modern AI agent workflows (Antigravity) and structured prompt architecture to rapidly scaffold modular frontend systems and performant interfaces.',
+      category: 'AI Engineering & Modern Web Performance',
+      description: 'Experimenting with modern AI agent workflows (Antigravity) and structured prompt architecture to rapidly scaffold modular frontend architectures and performant web tools.',
       context: 'Exploring the intersection of human engineering and agentic AI pair programming to accelerate web tool creation, motion design, and clean code architecture.',
       features: [
         'Agentic AI pair-programming workflows for rapid component specification',
@@ -432,11 +481,11 @@ document.addEventListener('DOMContentLoaded', () => {
         'Focus on web accessibility, smoothness, and zero-runtime bundle overhead'
       ],
       techStack: ['AI Workflows', 'Antigravity', 'Frontend Architecture', 'Vanilla JS', 'Motion Design'],
-      note: 'Explores cutting-edge AI-assisted engineering and modern web performance.'
+      note: 'Engineering Methodologies: Explores cutting-edge AI-assisted engineering and modern web performance.'
     }
   };
 
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectCards = document.querySelectorAll('.project-showcase-card');
   const projectModal = document.getElementById('projectModal');
   const modalCategory = document.getElementById('modalCategory');
   const modalTitle = document.getElementById('modalTitle');
@@ -454,31 +503,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalBody.innerHTML = `
       <div>
-        <h4 class="modal-section-title">Overview</h4>
+        <h4 class="modal-section-title">PROJECT OVERVIEW</h4>
         <p>${data.description}</p>
       </div>
 
       <div>
-        <h4 class="modal-section-title">Project Context</h4>
+        <h4 class="modal-section-title">ENGINEERING CONTEXT</h4>
         <p>${data.context}</p>
       </div>
 
       <div>
-        <h4 class="modal-section-title">Key Capabilities &amp; Features</h4>
+        <h4 class="modal-section-title">KEY ARCHITECTURAL HIGHLIGHTS</h4>
         <ul class="modal-features-list">
           ${data.features.map(f => `<li>${f}</li>`).join('')}
         </ul>
       </div>
 
       <div>
-        <h4 class="modal-section-title">Technologies Used</h4>
-        <div class="project-tags" style="margin-top: 6px; margin-bottom: 0;">
+        <h4 class="modal-section-title">TECHNOLOGIES &amp; TOOLING</h4>
+        <div class="project-tech-tags" style="margin-top: 8px; margin-bottom: 0;">
           ${data.techStack.map(t => `<span class="tag">${t}</span>`).join('')}
         </div>
       </div>
 
       <div class="modal-note-box">
-        <strong>Note:</strong> ${data.note}
+        <strong>Status / Note:</strong> ${data.note}
       </div>
     `;
 
@@ -551,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     10. CONTACT FORM HANDLER (CLIENT VALIDATION & MAILTO)
+     10. CONTACT FORM CLIENT-SIDE VALIDATION & MAILTO HANDLER
      ------------------------------------------------------------------------ */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
@@ -587,10 +636,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!message) {
-        messageError.textContent = 'Please enter a message.';
+        messageError.textContent = 'Please enter your message.';
         hasError = true;
       } else if (message.length < 5) {
-        messageError.textContent = 'Message should be at least 5 characters.';
+        messageError.textContent = 'Message should contain at least 5 characters.';
         hasError = true;
       }
 
@@ -605,10 +654,10 @@ Name: ${name}
 Message:
 ${message}
 
-Sent from your portfolio contact form.`);
+Sent via your creative developer portfolio.`);
       const mailtoUrl = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
 
-      showToast('Opening your email client to send message to ansh7224@outlook.com...', '✉️');
+      showToast('Opening your default email client addressed to ansh7224@outlook.com...', '✉️');
 
       setTimeout(() => {
         window.location.href = mailtoUrl;
@@ -617,7 +666,7 @@ Sent from your portfolio contact form.`);
   }
 
   /* ------------------------------------------------------------------------
-     11. SMOOTH SCROLL FOR INTERNAL ANCHORS
+     11. SMOOTH SCROLLING FOR INTERNAL ANCHORS
      ------------------------------------------------------------------------ */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
