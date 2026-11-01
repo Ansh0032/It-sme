@@ -3,44 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ansh Singh — Student Developer (Class 12, PCM + CS + AI, Army Public School SP Marg, Lucknow). Showcasing software builds, AI/ML exploration, market analysis tools, and web design." />
-  <title>Ansh Singh — Student Developer | AI, Web &amp; Technology</title>
+  <meta name="description" content="ANSH. — Creative Developer &amp; Full Stack Software Engineer. Building interactive web experiences, practical software solutions, and AI-powered applications." />
+  <title>ANSH. — Creative Developer | Full Stack &amp; AI Enthusiast</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Fixed Background Particle Canvas -->
+  <!-- Fixed Background Canvas for Particle Constellation -->
   <canvas id="particles" aria-hidden="true"></canvas>
 
-  <!-- Ambient Glow Blobs & Grid Overlay -->
+  <!-- Atmospheric SVG Shapes, Ambient Gradients & Cursor Spotlight -->
   <div class="ambient-glows" aria-hidden="true">
-    <div class="glow-blob glow-purple"></div>
-    <div class="glow-blob glow-cyan"></div>
-    <div class="glow-blob glow-magenta"></div>
+    <div class="glow-blob glow-indigo"></div>
+    <div class="glow-blob glow-crimson"></div>
+    <div class="glow-blob glow-deep"></div>
     <div class="grid-overlay"></div>
     <div class="cursor-spotlight"></div>
   </div>
 
-  <!-- Navigation Bar -->
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
   <header class="site-header" id="siteHeader">
     <nav class="nav-container" aria-label="Main Navigation">
-      <a href="#hero" class="brand" aria-label="Ansh Singh - Home">
-        <span class="brand-monogram">AS</span>
-        <div class="brand-text">
-          <span class="brand-name">Ansh Singh</span>
-          <span class="brand-role">Student Developer</span>
-        </div>
+      <a href="#hero" class="brand" aria-label="ANSH - Home">
+        <span class="brand-monogram">ANSH<span class="accent-dot">.</span></span>
+        <span class="brand-tagline">CREATIVE DEV</span>
       </a>
 
-      <!-- Desktop Nav Links -->
+      <!-- Desktop Navigation Links -->
       <div class="nav-links" id="navLinks">
         <a href="#hero" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#expertise" class="nav-link">Expertise</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#events" class="nav-link">Events</a>
+        <a href="#experience" class="nav-link">Experience</a>
         <a href="#achievements" class="nav-link">Achievements</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
@@ -48,13 +48,13 @@
       <div class="nav-actions">
         <a href="#contact" class="btn btn-nav-cta">
           <span>Let's Talk</span>
-          <svg class="cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg class="cta-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
         </a>
 
-        <!-- Mobile Hamburger Toggle -->
+        <!-- Mobile Drawer Menu Toggle -->
         <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
@@ -64,32 +64,29 @@
     </nav>
   </header>
 
-  <!-- Mobile Drawer Menu -->
+  <!-- Mobile Drawer Menu Overlay -->
   <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
     <div class="drawer-panel">
       <div class="drawer-header">
         <div class="brand">
-          <span class="brand-monogram">AS</span>
-          <div class="brand-text">
-            <span class="brand-name">Ansh Singh</span>
-            <span class="brand-role">Student Developer</span>
-          </div>
+          <span class="brand-monogram">ANSH<span class="accent-dot">.</span></span>
+          <span class="brand-tagline">CREATIVE DEV</span>
         </div>
         <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">&times;</button>
       </div>
       <div class="drawer-links">
         <a href="#hero" class="drawer-link">Home</a>
         <a href="#about" class="drawer-link">About</a>
-        <a href="#skills" class="drawer-link">Skills</a>
+        <a href="#expertise" class="drawer-link">Expertise</a>
         <a href="#projects" class="drawer-link">Projects</a>
-        <a href="#events" class="drawer-link">Events</a>
+        <a href="#experience" class="drawer-link">Experience</a>
         <a href="#achievements" class="drawer-link">Achievements</a>
         <a href="#contact" class="drawer-link">Contact</a>
       </div>
       <div class="drawer-footer">
         <a href="#contact" class="btn btn-primary btn-block drawer-cta">
-          <span>Get in Touch</span>
+          <span>Let's Connect</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
@@ -103,36 +100,35 @@
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero" aria-labelledby="heroHeading">
       <div class="container hero-container">
-        <!-- Hero Text Column -->
+        <!-- Hero Content Column -->
         <div class="hero-content reveal-item">
-          <div class="badge-pill">
-            <span class="pulse-dot"></span>
-            <span>Class 12 &bull; PCM + CS + AI &bull; Army Public School SP Marg, Lucknow</span>
+          <div class="hero-eyebrow-row">
+            <span class="hero-status-pill">
+              <span class="status-pulse-dot"></span>
+              <span>Available for select collaborations</span>
+            </span>
+            <span class="hero-tag-pill">CREATIVE DEVELOPER</span>
           </div>
 
           <h1 class="hero-title" id="heroHeading">
-            Hi, I'm <br />
-            <span class="gradient-text">Ansh Singh</span>
+            BUILDING DIGITAL EXPERIENCES THAT <span class="title-highlight">MOVE PEOPLE.</span>
           </h1>
 
-          <p class="hero-tagline">
-            Student Developer &bull; AI &amp; Web Enthusiast
-          </p>
-
-          <div class="hero-typewriter" aria-live="polite">
-            <span class="typewriter-prefix">Currently: </span>
-            <span class="typewriter-text" id="typewriterText">Building Projects</span>
-            <span class="typewriter-cursor" aria-hidden="true">|</span>
-          </div>
-
           <p class="hero-description">
-            I build practical software, web experiences and technology projects while continuously exploring AI, machine learning, programming and modern web development.
+            I build interactive web experiences, practical software solutions, and AI-powered applications by combining engineering, design, and modern development workflows.
           </p>
+
+          <!-- Typewriter Dynamic Role Display -->
+          <div class="hero-focus-box" aria-live="polite">
+            <span class="focus-label">FOCUS //</span>
+            <span class="focus-text" id="typewriterText">Interactive Web Experiences</span>
+            <span class="focus-cursor" aria-hidden="true">_</span>
+          </div>
 
           <div class="hero-cta-group">
             <a href="#projects" class="btn btn-primary">
-              <span>VIEW MY WORK</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <span>EXPLORE MY WORK</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
@@ -142,101 +138,84 @@
             </a>
           </div>
 
-          <!-- Quick Information Bar -->
-          <div class="hero-quick-info" aria-label="Academic & Background Highlights">
-            <div class="info-item">
-              <span class="info-label">Academic Stream</span>
-              <span class="info-value">Class 12 &bull; PCM + CS + AI</span>
+          <!-- Hero Identity Summary Ticker -->
+          <div class="hero-summary-bar">
+            <div class="summary-col">
+              <span class="summary-label">ROLE</span>
+              <span class="summary-value">Creative Developer &amp; Engineer</span>
             </div>
-            <div class="info-item">
-              <span class="info-label">Institution</span>
-              <span class="info-value">Army Public School SP Marg, Lucknow</span>
+            <div class="summary-col">
+              <span class="summary-label">CORE DOMAINS</span>
+              <span class="summary-value">Full Stack &bull; On-Device AI &bull; Interactive UI</span>
             </div>
-            <div class="info-item">
-              <span class="info-label">Location</span>
-              <span class="info-value">Lucknow, India</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Status</span>
-              <span class="info-value highlight-cyan">Student Developer / Fresher</span>
-            </div>
-            <div class="info-item full-width">
-              <span class="info-label">Experience Scope</span>
-              <span class="info-value">Student Projects &bull; Competitions &bull; Technology Events</span>
+            <div class="summary-col">
+              <span class="summary-label">BASE</span>
+              <span class="summary-value">Lucknow, India &bull; Remote</span>
             </div>
           </div>
         </div>
 
-        <!-- Hero Interactive Developer Card & Orbit Visual -->
+        <!-- Hero Interactive Visual Sculpture -->
         <div class="hero-visual reveal-item" aria-hidden="true">
-          <div class="orbit-stage">
-            <!-- Orbital Rings & Glowing Micro-Nodes -->
-            <div class="orbit-ring orbit-ring-1">
-              <span class="orbit-node node-1"></span>
+          <div class="sculpture-stage">
+            <!-- Concentric Orbital Compass Rings -->
+            <div class="orbit-ring orbit-ring-outer">
+              <span class="orbital-node node-crimson"></span>
             </div>
-            <div class="orbit-ring orbit-ring-2">
-              <span class="orbit-node node-2"></span>
-              <span class="orbit-node node-3"></span>
+            <div class="orbit-ring orbit-ring-middle">
+              <span class="orbital-node node-indigo-1"></span>
+              <span class="orbital-node node-indigo-2"></span>
             </div>
-            <div class="orbit-ring orbit-ring-3">
-              <span class="orbit-node node-4"></span>
+            <div class="orbit-ring orbit-ring-inner">
+              <span class="orbital-node node-ivory"></span>
             </div>
 
-            <!-- Central Glass Identity Card -->
-            <div class="identity-card" id="identityCard">
-              <div class="card-glass-shine"></div>
-              <div class="card-header">
-                <div class="card-avatar">AS</div>
-                <div class="card-status-indicator">
-                  <span class="status-dot"></span> Active Learner
+            <!-- Central Editorial Identity Frame -->
+            <div class="editorial-card" id="identityCard">
+              <div class="card-inner-glow"></div>
+              <div class="card-top-bar">
+                <span class="card-mono-mark">ANSH.DEV</span>
+                <span class="card-badge">2026 VERIFIED</span>
+              </div>
+              <div class="card-avatar-wrap">
+                <div class="avatar-monogram">AS</div>
+                <div class="avatar-title-group">
+                  <h3 class="avatar-name">Ansh Singh</h3>
+                  <span class="avatar-subtitle">Creative Developer</span>
                 </div>
               </div>
-              <div class="card-body">
-                <h3 class="card-name">Ansh Singh</h3>
-                <p class="card-role">Student Developer</p>
-                <div class="card-stream">Class 12 &bull; PCM + CS + AI</div>
-                <div class="card-institution">Army Public School SP Marg, Lucknow</div>
-                <div class="card-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Java</span>
-                  <span class="tag">C++</span>
-                  <span class="tag">AI/ML</span>
-                  <span class="tag">Web</span>
-                </div>
+              <div class="card-divider"></div>
+              <div class="card-spec-tags">
+                <span class="spec-tag tag-crimson">Python</span>
+                <span class="spec-tag tag-indigo">React 19</span>
+                <span class="spec-tag tag-indigo">Node.js</span>
+                <span class="spec-tag tag-ivory">QVAC SDK</span>
+                <span class="spec-tag tag-ivory">FastAPI</span>
+                <span class="spec-tag tag-indigo">MySQL</span>
               </div>
-              <div class="card-footer">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>Lucknow, India</span>
+              <div class="card-bottom-row">
+                <span class="status-indicator-text">
+                  <span class="indicator-dot"></span> Active Project Work
+                </span>
+                <span class="location-label">Lucknow &bull; Remote</span>
               </div>
             </div>
 
-            <!-- Floating Badge Card 1 -->
-            <div class="floating-badge badge-top-left">
-              <div class="badge-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
-                </svg>
-              </div>
-              <div class="badge-text">
-                <span class="badge-title">Creative</span>
-                <span class="badge-subtitle">Problem Solver</span>
+            <!-- Floating Micro-Badge 1 -->
+            <div class="floating-pill pill-top-left">
+              <div class="pill-icon-box">⚡</div>
+              <div class="pill-text-wrap">
+                <span class="pill-title">Digital Craft</span>
+                <span class="pill-desc">UI Motion &amp; Systems</span>
               </div>
             </div>
 
-            <!-- Floating Badge Card 2 -->
-            <div class="floating-badge badge-bottom-right">
-              <div class="badge-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
-              <div class="badge-text">
-                <span class="badge-title">Build</span>
-                <span class="badge-subtitle">Learn &bull; Create &bull; Improve</span>
+            <!-- Floating Micro-Badge 2 -->
+            <div class="floating-pill pill-bottom-right">
+              <div class="pill-icon-box">🧠</div>
+              <div class="pill-text-wrap">
+                <span class="pill-title">On-Device AI</span>
+                <span class="pill-desc">Private Local Inference</span>
               </div>
             </div>
           </div>
@@ -248,180 +227,218 @@
     <section class="about-section section-padding" id="about" aria-labelledby="aboutHeading">
       <div class="container">
         <div class="section-header reveal-item">
-          <div class="section-badge">About Me</div>
-          <h2 class="section-title" id="aboutHeading">Passionate about building &amp; exploring technology.</h2>
-          <p class="section-subtitle">A quick introduction to my background, academic stream, and engineering focus.</p>
+          <div class="section-badge">PHILOSOPHY &amp; APPROACH</div>
+          <h2 class="section-title" id="aboutHeading">Where engineering precision meets digital craft.</h2>
+          <p class="section-subtitle">Transforming ideas into interactive, reliable, and aesthetically intentional software.</p>
         </div>
 
-        <div class="about-grid">
-          <div class="about-main-card reveal-item">
-            <p class="about-lead">
-              I am a <strong>Class 12 student developer</strong> from <strong>Army Public School SP Marg, Lucknow</strong>, studying PCM with Computer Science and Artificial Intelligence. I am deeply interested in programming, AI and machine learning, web development, and building practical technology projects.
+        <div class="about-editorial-grid">
+          <!-- Left Editorial Narrative -->
+          <div class="about-narrative-card reveal-item">
+            <h3 class="narrative-heading">
+              &ldquo;I don't just write code to make things function; I craft systems that feel fluid, purposeful, and memorable.&rdquo;
+            </h3>
+            <p class="narrative-body">
+              I am an independent creative developer and software builder with a deep interest in modern web engineering, on-device artificial intelligence, and algorithmic systems. My focus centers on building practical applications that solve genuine problems while elevating the digital user experience.
             </p>
-            <p class="about-subtext">
-              I actively experiment with different technologies and participate in technology events and competitions to continuously improve both my technical engineering and creative problem-solving skills.
+            <p class="narrative-body">
+              Whether architecting a local-first offline study assistant powered by on-device LLMs, building algorithmic market structure analyzers, or engineering responsive, motion-rich frontend interfaces, I approach every challenge with meticulous attention to clean architecture, visual hierarchy, and performance.
             </p>
+            <div class="narrative-signature-row">
+              <div class="signature-block">
+                <span class="sig-name">Ansh Singh</span>
+                <span class="sig-title">Independent Creative Developer</span>
+              </div>
+              <a href="#projects" class="inline-cta-link">
+                <span>View Case Studies</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
           </div>
 
-          <div class="about-highlights-grid">
-            <div class="highlight-box reveal-item">
-              <div class="highlight-icon">💻</div>
-              <h3 class="highlight-title">Software &amp; Programming</h3>
-              <p class="highlight-desc">Building structured logic and applications in Python, Java, JavaScript, C++, and SQL/MySQL databases.</p>
+          <!-- Right Pillars Column -->
+          <div class="about-pillars-column">
+            <div class="pillar-card reveal-item">
+              <div class="pillar-number">01</div>
+              <div class="pillar-content">
+                <h4 class="pillar-title">Full Stack Engineering</h4>
+                <p class="pillar-desc">Building resilient web applications from structured relational schemas (SQL/MySQL) and lightweight backend APIs (Python, FastAPI, Node/Express) to modular, component-driven client architectures.</p>
+              </div>
             </div>
 
-            <div class="highlight-box reveal-item">
-              <div class="highlight-icon">🤖</div>
-              <h3 class="highlight-title">AI &amp; Data Exploration</h3>
-              <p class="highlight-desc">Certified in CBSE AI and Microsoft AI/ML foundations, exploring Kaggle challenges and data analysis.</p>
+            <div class="pillar-card reveal-item">
+              <div class="pillar-number">02</div>
+              <div class="pillar-content">
+                <h4 class="pillar-title">On-Device AI &amp; Local Inference</h4>
+                <p class="pillar-desc">Exploring the frontier of privacy-centric, 100% on-device AI inference using technologies like Tether's QVAC SDK, local embeddings, and optimized data preprocessing pipelines.</p>
+              </div>
             </div>
 
-            <div class="highlight-box reveal-item">
-              <div class="highlight-icon">🌐</div>
-              <h3 class="highlight-title">Modern Web Interfaces</h3>
-              <p class="highlight-desc">Crafting responsive, accessible, interactive web pages and competition frontend prototypes.</p>
+            <div class="pillar-card reveal-item">
+              <div class="pillar-number">03</div>
+              <div class="pillar-content">
+                <h4 class="pillar-title">Interactive UI &amp; Motion Design</h4>
+                <p class="pillar-desc">Designing editorial typography, purposeful micro-animations, and fluid responsive layouts that respect user accessibility and render with zero layout shift.</p>
+              </div>
             </div>
 
-            <div class="highlight-box reveal-item">
-              <div class="highlight-icon">🏆</div>
-              <h3 class="highlight-title">Events &amp; Exhibitions</h3>
-              <p class="highlight-desc">Participating in technology competitions, web design contests, and school science/tech presentations.</p>
+            <div class="pillar-card reveal-item">
+              <div class="pillar-number">04</div>
+              <div class="pillar-content">
+                <h4 class="pillar-title">Algorithmic Problem Solving</h4>
+                <p class="pillar-desc">Analyzing technical data patterns, backtesting market indicators, and writing robust automation scrapers and pipelines to turn raw unstructured data into actionable insights.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="skills-section section-padding" id="skills" aria-labelledby="skillsHeading">
+    <!-- TECHNICAL EXPERTISE SECTION -->
+    <section class="expertise-section section-padding" id="expertise" aria-labelledby="expertiseHeading">
       <div class="container">
         <div class="section-header reveal-item">
-          <div class="section-badge">Technical Toolkit</div>
-          <h2 class="section-title" id="skillsHeading">Technologies &amp; tools I work with.</h2>
-          <p class="section-subtitle">Grouped realistically by hands-on project experience, active learning, and workflow tools.</p>
+          <div class="section-badge">TECHNICAL ECOSYSTEM</div>
+          <h2 class="section-title" id="expertiseHeading">Tools, languages &amp; technologies.</h2>
+          <p class="section-subtitle">Realistically categorized by active project implementation, production builds, and foundational mastery.</p>
         </div>
 
-        <div class="skills-category-grid">
-          <!-- Category 1: Programming -->
-          <div class="skill-category-card reveal-item">
-            <div class="category-header">
-              <div class="category-icon-box">⚡</div>
+        <div class="expertise-grid">
+          <!-- Category 1: Programming & Software Engineering -->
+          <div class="expertise-card reveal-item">
+            <div class="card-accent-line crimson"></div>
+            <div class="expertise-header">
+              <div class="expertise-icon-box">⚡</div>
               <div>
-                <h3 class="category-title">Programming</h3>
-                <span class="category-subtitle">Core Languages &amp; Databases</span>
+                <h3 class="expertise-cat-title">Software Engineering</h3>
+                <span class="expertise-cat-desc">Core Languages &amp; Data Layers</span>
               </div>
             </div>
-            <div class="skill-chips-list">
-              <div class="skill-chip">
-                <span class="chip-name">Python</span>
-                <span class="chip-status status-project">Project Experience</span>
+            <div class="tech-pills-list">
+              <div class="tech-pill">
+                <span class="tech-name">Python</span>
+                <span class="tech-badge badge-project">Production Projects</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">Java</span>
-                <span class="chip-status status-working">Working With</span>
+              <div class="tech-pill">
+                <span class="tech-name">Java</span>
+                <span class="tech-badge badge-working">OOP &amp; Core Systems</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">JavaScript</span>
-                <span class="chip-status status-project">Project Experience</span>
+              <div class="tech-pill">
+                <span class="tech-name">JavaScript (ES6+)</span>
+                <span class="tech-badge badge-project">Frontend &amp; Node</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">C++</span>
-                <span class="chip-status status-learning">Learning / Academic</span>
+              <div class="tech-pill">
+                <span class="tech-name">C++</span>
+                <span class="tech-badge badge-learning">Foundations &amp; Algorithmic</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">SQL / MySQL</span>
-                <span class="chip-status status-project">Project Experience</span>
+              <div class="tech-pill">
+                <span class="tech-name">SQL / MySQL</span>
+                <span class="tech-badge badge-project">Schema &amp; Relational DB</span>
               </div>
             </div>
           </div>
 
           <!-- Category 2: Web Development -->
-          <div class="skill-category-card reveal-item">
-            <div class="category-header">
-              <div class="category-icon-box">🌐</div>
+          <div class="expertise-card reveal-item">
+            <div class="card-accent-line indigo"></div>
+            <div class="expertise-header">
+              <div class="expertise-icon-box">🌐</div>
               <div>
-                <h3 class="category-title">Web Development</h3>
-                <span class="category-subtitle">Frontend &amp; Responsive UI</span>
+                <h3 class="expertise-cat-title">Web Development</h3>
+                <span class="expertise-cat-desc">Frontend Frameworks &amp; Architecture</span>
               </div>
             </div>
-            <div class="skill-chips-list">
-              <div class="skill-chip">
-                <span class="chip-name">HTML5</span>
-                <span class="chip-status status-project">Semantic Markup</span>
+            <div class="tech-pills-list">
+              <div class="tech-pill">
+                <span class="tech-name">React 19 / Modern React</span>
+                <span class="tech-badge badge-project">Component Systems</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">CSS3</span>
-                <span class="chip-status status-project">Modern Layouts &amp; Motion</span>
+              <div class="tech-pill">
+                <span class="tech-name">HTML5 &amp; CSS3</span>
+                <span class="tech-badge badge-project">Semantic &amp; Modern Layouts</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">JavaScript</span>
-                <span class="chip-status status-working">DOM &amp; Interactivity</span>
+              <div class="tech-pill">
+                <span class="tech-name">Node.js / Express</span>
+                <span class="tech-badge badge-project">REST APIs &amp; Services</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">Responsive Design</span>
-                <span class="chip-status status-project">Cross-Device Crafting</span>
+              <div class="tech-pill">
+                <span class="tech-name">Responsive UI / UX</span>
+                <span class="tech-badge badge-project">Mobile-First Systems</span>
+              </div>
+              <div class="tech-pill">
+                <span class="tech-name">Electron</span>
+                <span class="tech-badge badge-project">Desktop App Packaging</span>
               </div>
             </div>
           </div>
 
-          <!-- Category 3: AI / Data -->
-          <div class="skill-category-card reveal-item">
-            <div class="category-header">
-              <div class="category-icon-box">🧠</div>
+          <!-- Category 3: AI & Machine Learning -->
+          <div class="expertise-card reveal-item">
+            <div class="card-accent-line crimson"></div>
+            <div class="expertise-header">
+              <div class="expertise-icon-box">🧠</div>
               <div>
-                <h3 class="category-title">AI &amp; Data Exploration</h3>
-                <span class="category-subtitle">Foundations &amp; Analysis</span>
+                <h3 class="expertise-cat-title">AI &amp; Machine Learning</h3>
+                <span class="expertise-cat-desc">On-Device Inference &amp; Analytics</span>
               </div>
             </div>
-            <div class="skill-chips-list">
-              <div class="skill-chip">
-                <span class="chip-name">Artificial Intelligence</span>
-                <span class="chip-status status-learning">CBSE AI Certified</span>
+            <div class="tech-pills-list">
+              <div class="tech-pill">
+                <span class="tech-name">Tether QVAC SDK</span>
+                <span class="tech-badge badge-project">On-Device Inference</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">Machine Learning</span>
-                <span class="chip-status status-learning">Foundations &amp; Concepts</span>
+              <div class="tech-pill">
+                <span class="tech-name">Artificial Intelligence</span>
+                <span class="tech-badge badge-project">CBSE AI Certified</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">Data Analysis</span>
-                <span class="chip-status status-working">CSV Pipelines &amp; Logic</span>
+              <div class="tech-pill">
+                <span class="tech-name">Machine Learning</span>
+                <span class="tech-badge badge-working">Foundational Algorithms</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">Technical Market Analysis</span>
-                <span class="chip-status status-project">Indicator Logic</span>
+              <div class="tech-pill">
+                <span class="tech-name">Data Processing</span>
+                <span class="tech-badge badge-project">ETL &amp; Sanitization</span>
+              </div>
+              <div class="tech-pill">
+                <span class="tech-name">Prompt Engineering</span>
+                <span class="tech-badge badge-project">Agentic Workflows</span>
               </div>
             </div>
           </div>
 
-          <!-- Category 4: Tools & Platforms -->
-          <div class="skill-category-card reveal-item">
-            <div class="category-header">
-              <div class="category-icon-box">🛠️</div>
+          <!-- Category 4: Development Workflow & Tooling -->
+          <div class="expertise-card reveal-item">
+            <div class="card-accent-line indigo"></div>
+            <div class="expertise-header">
+              <div class="expertise-icon-box">🛠️</div>
               <div>
-                <h3 class="category-title">Tools &amp; Platforms</h3>
-                <span class="category-subtitle">Workflow &amp; Learning Ecosystem</span>
+                <h3 class="expertise-cat-title">Workflow &amp; Tooling</h3>
+                <span class="expertise-cat-desc">Modern Developer Toolchain</span>
               </div>
             </div>
-            <div class="skill-chips-list">
-              <div class="skill-chip">
-                <span class="chip-name">VS Code</span>
-                <span class="chip-status status-working">Primary Code Editor</span>
+            <div class="tech-pills-list">
+              <div class="tech-pill">
+                <span class="tech-name">Git &amp; GitHub</span>
+                <span class="tech-badge badge-project">Version Control &amp; CI</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">GitHub</span>
-                <span class="chip-status status-working">Version Control &amp; Code</span>
+              <div class="tech-pill">
+                <span class="tech-name">Vite &amp; Tooling</span>
+                <span class="tech-badge badge-project">Modern Build Bundlers</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">TradingView</span>
-                <span class="chip-status status-working">Charting &amp; Scripting</span>
+              <div class="tech-pill">
+                <span class="tech-name">VS Code</span>
+                <span class="tech-badge badge-project">Primary Development IDE</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">Kaggle</span>
-                <span class="chip-status status-learning">AI/ML Community Learning</span>
+              <div class="tech-pill">
+                <span class="tech-name">TradingView Scripting</span>
+                <span class="tech-badge badge-working">Technical Indicators</span>
               </div>
-              <div class="skill-chip">
-                <span class="chip-name">Microsoft AI/ML Ecosystem</span>
-                <span class="chip-status status-learning">Certified Learning Track</span>
+              <div class="tech-pill">
+                <span class="tech-name">Antigravity</span>
+                <span class="tech-badge badge-project">AI-Assisted Engineering</span>
               </div>
             </div>
           </div>
@@ -429,77 +446,134 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- SELECTED PROJECTS SECTION -->
     <section class="projects-section section-padding" id="projects" aria-labelledby="projectsHeading">
       <div class="container">
         <div class="section-header reveal-item">
-          <div class="section-badge">Selected Projects</div>
-          <h2 class="section-title" id="projectsHeading">Practical builds &amp; experiments.</h2>
-          <p class="section-subtitle">A collection of software, algorithmic tools, AI exploration, and web interfaces I have built.</p>
+          <div class="section-badge">CASE STUDIES</div>
+          <h2 class="section-title" id="projectsHeading">Selected projects &amp; experiments.</h2>
+          <p class="section-subtitle">A showcase of software systems, AI applications, financial analytics engines, and digital design.</p>
         </div>
 
-        <div class="projects-grid">
-          <!-- PROJECT 01: Intraday Analysis / Trade_with_Ansh -->
-          <article class="project-card reveal-item" data-project-id="trade-analysis" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Intraday &amp; Market Technical Analysis">
-            <div class="project-card-inner">
-              <div class="project-preview-frame chart-preview">
-                <div class="preview-header">
-                  <span class="preview-dot red"></span>
-                  <span class="preview-dot yellow"></span>
-                  <span class="preview-dot green"></span>
-                  <span class="preview-title">market_analysis.py &bull; Technical Logic</span>
+        <div class="projects-gallery">
+          <!-- PROJECT 01: StudyVault AI -->
+          <article class="project-showcase-card reveal-item" data-project-id="studyvault-ai" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for StudyVault AI">
+            <div class="project-card-layout">
+              <div class="project-preview-side">
+                <div class="preview-chrome">
+                  <span class="chrome-dot red"></span>
+                  <span class="chrome-dot yellow"></span>
+                  <span class="chrome-dot green"></span>
+                  <span class="chrome-title">studyvault-ai &bull; electron &bull; qvac on-device</span>
                 </div>
-                <div class="chart-mockup">
-                  <div class="chart-grid-lines">
+                <div class="preview-canvas-mockup ai-desktop-mockup">
+                  <div class="ai-mockup-header">
+                    <span class="badge-mini-indigo">QVAC ON-DEVICE INFERENCE</span>
+                    <span class="badge-mini-crimson">100% PRIVATE</span>
+                  </div>
+                  <div class="ai-chat-thread">
+                    <div class="chat-bubble user">Summarize the thermodynamics Carnot cycle efficiency equation.</div>
+                    <div class="chat-bubble ai">
+                      <span class="bubble-spark">⚡ QVAC Offline:</span> &eta; = 1 - (T_C / T_H). Maximum theoretical efficiency of heat engine operating between two thermal reservoirs.
+                    </div>
+                  </div>
+                  <div class="ai-metrics-footer">
+                    <span>Model: On-Device QVAC SDK</span>
+                    <span class="status-green">&bull; Zero Cloud Telemetry</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content-side">
+                <div class="project-eyebrow">
+                  <span class="project-num">01</span>
+                  <span class="project-cat-badge">AI / Desktop Application</span>
+                </div>
+                <h3 class="project-headline">StudyVault AI — Private Offline Study Assistant</h3>
+                <p class="project-summary">
+                  A private, offline desktop study assistant engineered with Electron, React 19, Tailwind CSS, Express, and Tether's QVAC SDK for 100% on-device AI inference without cloud data leakage.
+                </p>
+                <div class="project-tech-tags">
+                  <span class="tag">Tether QVAC SDK</span>
+                  <span class="tag">Electron</span>
+                  <span class="tag">React 19</span>
+                  <span class="tag">Vite</span>
+                  <span class="tag">Tailwind CSS</span>
+                  <span class="tag">Express</span>
+                </div>
+                <div class="project-cta-row">
+                  <span class="case-study-btn">
+                    <span>Inspect Case Study</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: Intraday Market Technical Analysis (Trade_with_Ansh) -->
+          <article class="project-showcase-card reveal-item" data-project-id="trade-analysis" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for Intraday Market Technical Analysis">
+            <div class="project-card-layout">
+              <div class="project-preview-side">
+                <div class="preview-chrome">
+                  <span class="chrome-dot red"></span>
+                  <span class="chrome-dot yellow"></span>
+                  <span class="chrome-dot green"></span>
+                  <span class="chrome-title">market_engine.py &bull; aegis analytics</span>
+                </div>
+                <div class="preview-canvas-mockup chart-mockup-wrapper">
+                  <div class="chart-grid-backdrop">
                     <div class="grid-line horizontal"></div>
                     <div class="grid-line horizontal"></div>
                     <div class="grid-line horizontal"></div>
                     <div class="grid-line vertical"></div>
                     <div class="grid-line vertical"></div>
                   </div>
-                  <!-- SVG Indicator Visual -->
-                  <svg class="chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true">
+                  <svg class="chart-svg-art" viewBox="0 0 320 130" preserveAspectRatio="none" aria-hidden="true">
                     <defs>
-                      <linearGradient id="chartGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
-                        <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.0" />
+                      <linearGradient id="chartGlowArea" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#5269D8" stop-opacity="0.45" />
+                        <stop offset="100%" stop-color="#C92535" stop-opacity="0.0" />
                       </linearGradient>
                     </defs>
-                    <path class="chart-area" d="M 0 95 Q 45 80, 80 85 T 160 40 T 230 60 T 300 15 L 300 120 L 0 120 Z" fill="url(#chartGrad1)" />
-                    <path class="chart-line" d="M 0 95 Q 45 80, 80 85 T 160 40 T 230 60 T 300 15" fill="none" stroke="#22d3ee" stroke-width="2.5" />
+                    <path class="chart-fill" d="M 0 105 Q 50 90, 85 95 T 170 45 T 245 65 T 320 18 L 320 130 L 0 130 Z" fill="url(#chartGlowArea)" />
+                    <path class="chart-stroke" d="M 0 105 Q 50 90, 85 95 T 170 45 T 245 65 T 320 18" fill="none" stroke="#5269D8" stroke-width="2.6" />
                   </svg>
-                  <div class="chart-signal signal-buy" style="left: 27%; top: 68%;">
-                    <span class="signal-tag">ENTRY / SL</span>
+                  <div class="chart-marker marker-entry" style="left: 27%; top: 70%;">
+                    <span>ENTRY / SL</span>
                   </div>
-                  <div class="chart-signal signal-sell" style="left: 76%; top: 44%;">
-                    <span class="signal-tag">TAKE PROFIT</span>
+                  <div class="chart-marker marker-exit" style="left: 78%; top: 46%;">
+                    <span>TARGET TP</span>
                   </div>
                   <div class="chart-stat-chip">
-                    <span class="stat-dot"></span> RSI &bull; MACD &bull; Fibonacci
+                    <span class="pulse-point"></span> RSI &bull; MACD &bull; Fibonacci &bull; Alligator
                   </div>
                 </div>
               </div>
 
-              <div class="project-content">
-                <div class="project-meta">
-                  <span class="project-number">01</span>
-                  <span class="badge-category">Technical Analysis</span>
+              <div class="project-content-side">
+                <div class="project-eyebrow">
+                  <span class="project-num">02</span>
+                  <span class="project-cat-badge">Financial Engineering &bull; Python</span>
                 </div>
-                <h3 class="project-title">Intraday &amp; Market Technical Analysis (Trade_with_Ansh)</h3>
-                <p class="project-description">
-                  A technical-analysis experimentation project focused on analyzing market movements and identifying potential Entry, Exit, Stop Loss, and Take Profit zones.
+                <h3 class="project-headline">Intraday &amp; Market Technical Analysis (Trade_with_Ansh)</h3>
+                <p class="project-summary">
+                  A quantitative technical analysis engine integrating RSI, MACD, Fibonacci retracements, and Alligator indicator structures to evaluate market momentum and key execution levels.
                 </p>
-                <div class="project-tags">
+                <div class="project-tech-tags">
                   <span class="tag">Python</span>
                   <span class="tag">TradingView</span>
-                  <span class="tag">RSI / MACD</span>
-                  <span class="tag">Fibonacci</span>
-                  <span class="tag">Alligator</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">Lightweight Charts</span>
+                  <span class="tag">Technical Indicators</span>
                 </div>
-                <div class="project-footer">
-                  <span class="view-details-link">
-                    <span>View Project Details</span>
-                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="project-cta-row">
+                  <span class="case-study-btn">
+                    <span>Inspect Case Study</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -509,54 +583,56 @@
             </div>
           </article>
 
-          <!-- PROJECT 02: MindTrack AI -->
-          <article class="project-card reveal-item" data-project-id="mindtrack-ai" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for MindTrack AI">
-            <div class="project-card-inner">
-              <div class="project-preview-frame ai-preview">
-                <div class="preview-header">
-                  <span class="preview-dot red"></span>
-                  <span class="preview-dot yellow"></span>
-                  <span class="preview-dot green"></span>
-                  <span class="preview-title">mindtrack_ai &bull; student productivity</span>
+          <!-- PROJECT 03: SPM '27 Farewell Ticketing System -->
+          <article class="project-showcase-card reveal-item" data-project-id="farewell-tickets" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for SPM Farewell Ticketing System">
+            <div class="project-card-layout">
+              <div class="project-preview-side">
+                <div class="preview-chrome">
+                  <span class="chrome-dot red"></span>
+                  <span class="chrome-dot yellow"></span>
+                  <span class="chrome-dot green"></span>
+                  <span class="chrome-title">tickets.spm27.app &bull; qr verification</span>
                 </div>
-                <div class="productivity-mockup-body">
-                  <div class="mockup-header-row">
-                    <span class="mockup-pill-purple">AI Focus Assistant</span>
-                    <span class="mockup-pill-cyan">Study Tracker</span>
-                  </div>
-                  <div class="mockup-task-item active">
-                    <span class="task-check">&#10003;</span>
-                    <span class="task-text">PCM Formula Revision Pipeline</span>
-                  </div>
-                  <div class="mockup-task-item">
-                    <span class="task-dot"></span>
-                    <span class="task-text">AI Algorithm Learning Session</span>
-                  </div>
-                  <div class="mockup-ai-insight">
-                    <span class="insight-label">AI Insight:</span> Optimal focus window identified &bull; 92% goal progress
+                <div class="preview-canvas-mockup ticketing-mockup">
+                  <div class="ticket-stub">
+                    <div class="ticket-header-strip">SPM '27 &bull; ADMIT ONE</div>
+                    <div class="ticket-qr-box">
+                      <div class="qr-sample-grid">
+                        <span class="qr-pixel"></span><span class="qr-pixel"></span><span class="qr-pixel"></span>
+                        <span class="qr-pixel"></span><span class="qr-pixel off"></span><span class="qr-pixel"></span>
+                        <span class="qr-pixel"></span><span class="qr-pixel"></span><span class="qr-pixel"></span>
+                      </div>
+                      <div class="ticket-verified-tag">&#10003; VERIFIED</div>
+                    </div>
+                    <div class="ticket-meta-row">
+                      <span>SECURE QR SCANNER</span>
+                      <span>SQLITE BACKEND</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="project-content">
-                <div class="project-meta">
-                  <span class="project-number">02</span>
-                  <span class="badge-category">AI / Productivity</span>
+              <div class="project-content-side">
+                <div class="project-eyebrow">
+                  <span class="project-num">03</span>
+                  <span class="project-cat-badge">Full Stack &bull; Web Application</span>
                 </div>
-                <h3 class="project-title">MindTrack AI — Student Productivity Ecosystem</h3>
-                <p class="project-description">
-                  An AI/productivity-oriented student project concept designed to streamline academic task scheduling, track learning milestones, and optimize study focus.
+                <h3 class="project-headline">SPM ’27 Farewell Ticketing &amp; Verification Platform</h3>
+                <p class="project-summary">
+                  A production-minded private ticketing web application built with React 18, TypeScript, Node.js/Express, SQLite, QR camera scanning verification, and automated confirmation dispatch.
                 </p>
-                <div class="project-tags">
-                  <span class="tag">Artificial Intelligence</span>
-                  <span class="tag">Productivity Logic</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">Interface Design</span>
+                <div class="project-tech-tags">
+                  <span class="tag">React 18</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Node / Express</span>
+                  <span class="tag">SQLite3</span>
+                  <span class="tag">QR Code Engine</span>
+                  <span class="tag">Nodemailer</span>
                 </div>
-                <div class="project-footer">
-                  <span class="view-details-link">
-                    <span>View Project Details</span>
-                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="project-cta-row">
+                  <span class="case-study-btn">
+                    <span>Inspect Case Study</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -566,47 +642,48 @@
             </div>
           </article>
 
-          <!-- PROJECT 03: Bank Management System -->
-          <article class="project-card reveal-item" data-project-id="bank-management" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Bank Management System">
-            <div class="project-card-inner">
-              <div class="project-preview-frame db-preview">
-                <div class="preview-header">
-                  <span class="preview-dot red"></span>
-                  <span class="preview-dot yellow"></span>
-                  <span class="preview-dot green"></span>
-                  <span class="preview-title">bank_system.py &bull; MySQL Backend</span>
+          <!-- PROJECT 04: Bank Management System -->
+          <article class="project-showcase-card reveal-item" data-project-id="bank-management" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for Bank Management System">
+            <div class="project-card-layout">
+              <div class="project-preview-side">
+                <div class="preview-chrome">
+                  <span class="chrome-dot red"></span>
+                  <span class="chrome-dot yellow"></span>
+                  <span class="chrome-dot green"></span>
+                  <span class="chrome-title">bank_system.py &bull; mysql backend</span>
                 </div>
-                <div class="code-editor-body">
-                  <div class="code-line"><span class="code-kw">import</span> <span class="code-lib">mysql.connector</span></div>
-                  <div class="code-line"><span class="code-kw">class</span> <span class="code-fn">BankSystem</span>:</div>
-                  <div class="code-line indent-1"><span class="code-var">db</span> = connect(host=<span class="code-str">'localhost'</span>, db=<span class="code-str">'bank_db'</span>)</div>
-                  <div class="code-line indent-1"><span class="code-kw">def</span> <span class="code-fn">execute_transaction</span>(acc_no, amount):</div>
-                  <div class="terminal-output-box">
-                    <span class="term-prompt">SQL&gt;</span> UPDATE accounts SET balance = balance + 5000 WHERE id = 104;<br />
-                    <span class="term-status ok">[SUCCESS]</span> Transaction Committed &bull; Team Leader: Ansh
+                <div class="preview-canvas-mockup code-terminal-mockup">
+                  <div class="code-line"><span class="c-kw">import</span> <span class="c-lib">mysql.connector</span></div>
+                  <div class="code-line"><span class="c-kw">class</span> <span class="c-fn">BankManagementSystem</span>:</div>
+                  <div class="code-line indent-1"><span class="c-var">db</span> = connect(host=<span class="c-str">'localhost'</span>, db=<span class="c-str">'bank_prod'</span>)</div>
+                  <div class="code-line indent-1"><span class="c-kw">def</span> <span class="c-fn">commit_transaction</span>(acc_id, delta):</div>
+                  <div class="terminal-log-box">
+                    <span class="term-prompt">SQL&gt;</span> COMMIT; <span class="term-status ok">[SUCCESS]</span> Record Written<br />
+                    <span class="term-meta">Team Leader: Ansh &bull; Team: Manas, Sourya</span>
                   </div>
                 </div>
               </div>
 
-              <div class="project-content">
-                <div class="project-meta">
-                  <span class="project-number">03</span>
-                  <span class="badge-category">Software / Team Project</span>
+              <div class="project-content-side">
+                <div class="project-eyebrow">
+                  <span class="project-num">04</span>
+                  <span class="project-cat-badge">Software Engineering &bull; Relational DB</span>
                 </div>
-                <h3 class="project-title">Bank Management System (Python + MySQL)</h3>
-                <p class="project-description">
-                  A software project managing customer accounts, transactions, balances, and records with a Python application layer and MySQL backend. Developed in a team led by Ansh.
+                <h3 class="project-headline">Bank Management System (Python + MySQL)</h3>
+                <p class="project-summary">
+                  A software project managing customer account lifecycles, debit/credit transactions, balance audits, and relational database integrity in MySQL. Developed in a team led by Ansh.
                 </p>
-                <div class="project-tags">
+                <div class="project-tech-tags">
                   <span class="tag">Python</span>
                   <span class="tag">MySQL</span>
-                  <span class="tag">CRUD Logic</span>
+                  <span class="tag">CRUD Operations</span>
+                  <span class="tag">Relational Schemas</span>
                   <span class="tag">Team Leader: Ansh</span>
                 </div>
-                <div class="project-footer">
-                  <span class="view-details-link">
-                    <span>View Project Details</span>
-                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="project-cta-row">
+                  <span class="case-study-btn">
+                    <span>Inspect Case Study</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -616,58 +693,108 @@
             </div>
           </article>
 
-          <!-- PROJECT 04: Portfolio & Web Design Competition Projects -->
-          <article class="project-card reveal-item" data-project-id="portfolio-competition" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Portfolio &amp; Web Design Competition Projects">
-            <div class="project-card-inner">
-              <div class="project-preview-frame browser-preview">
-                <div class="preview-header">
-                  <span class="preview-dot red"></span>
-                  <span class="preview-dot yellow"></span>
-                  <span class="preview-dot green"></span>
-                  <div class="preview-url-bar">https://webdesign.competition/showcase</div>
+          <!-- PROJECT 05: MindTrack AI -->
+          <article class="project-showcase-card reveal-item" data-project-id="mindtrack-ai" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for MindTrack AI">
+            <div class="project-card-layout">
+              <div class="project-preview-side">
+                <div class="preview-chrome">
+                  <span class="chrome-dot red"></span>
+                  <span class="chrome-dot yellow"></span>
+                  <span class="chrome-dot green"></span>
+                  <span class="chrome-title">mindtrack_ai &bull; productivity ecosystem</span>
                 </div>
-                <div class="browser-mockup-body">
-                  <div class="mockup-nav">
-                    <div class="mockup-bar-sm"></div>
-                    <div class="mockup-pill-group">
-                      <span></span><span></span><span></span>
-                    </div>
+                <div class="preview-canvas-mockup productivity-mockup">
+                  <div class="mockup-ribbon">
+                    <span class="ribbon-tag">STUDENT WORKFLOW AGENT</span>
                   </div>
-                  <div class="mockup-hero-box">
-                    <div class="mockup-headline"></div>
-                    <div class="mockup-subtext"></div>
-                    <div class="mockup-btn-row">
-                      <div class="mockup-btn primary"></div>
-                      <div class="mockup-btn"></div>
-                    </div>
+                  <div class="mockup-task-item done">
+                    <span class="task-check-mark">&#10003;</span>
+                    <span>Mathematics &amp; Physics Revision Modules</span>
                   </div>
-                  <div class="mockup-cards-row">
-                    <div class="mockup-mini-card"></div>
-                    <div class="mockup-mini-card active"></div>
-                    <div class="mockup-mini-card"></div>
+                  <div class="mockup-task-item active">
+                    <span class="task-pulse-mark"></span>
+                    <span>AI Deep Learning Concepts Review</span>
+                  </div>
+                  <div class="mockup-ai-insight-box">
+                    <span class="insight-label">AI Workflow:</span> Optimal study blocks synthesized based on retention patterns.
                   </div>
                 </div>
               </div>
 
-              <div class="project-content">
-                <div class="project-meta">
-                  <span class="project-number">04</span>
-                  <span class="badge-category">UI / Competition Design</span>
+              <div class="project-content-side">
+                <div class="project-eyebrow">
+                  <span class="project-num">05</span>
+                  <span class="project-cat-badge">AI / Productivity Ecosystem</span>
                 </div>
-                <h3 class="project-title">Portfolio &amp; Web Design Competition Pages</h3>
-                <p class="project-description">
-                  Responsive landing pages, sliding 1-page templates, and competition entries crafted using HTML, CSS, and lightweight JavaScript (including FIFA World Cup 2026 and ISRO topics).
+                <h3 class="project-headline">MindTrack AI — Productivity &amp; Milestone Ecosystem</h3>
+                <p class="project-summary">
+                  An AI/productivity-oriented student project concept designed to intelligently streamline study milestones, revision pacing, and task prioritization for high-demand academic workflows.
                 </p>
-                <div class="project-tags">
-                  <span class="tag">HTML / CSS</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">FIFA 2026 Design</span>
+                <div class="project-tech-tags">
+                  <span class="tag">Artificial Intelligence</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Productivity Logic</span>
+                  <span class="tag">Interface Architecture</span>
+                </div>
+                <div class="project-cta-row">
+                  <span class="case-study-btn">
+                    <span>Inspect Case Study</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 06: Portfolio & Web Design Competition Showcases -->
+          <article class="project-showcase-card reveal-item" data-project-id="webdesign-competition" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for Web Design Competition Showcases">
+            <div class="project-card-layout">
+              <div class="project-preview-side">
+                <div class="preview-chrome">
+                  <span class="chrome-dot red"></span>
+                  <span class="chrome-dot yellow"></span>
+                  <span class="chrome-dot green"></span>
+                  <span class="chrome-title">competition_showcase.html</span>
+                </div>
+                <div class="preview-canvas-mockup browser-mockup">
+                  <div class="browser-hero-wireframe">
+                    <div class="wireframe-pill-nav">
+                      <span class="wire-brand">FIFA 2026 // ISRO</span>
+                      <span class="wire-links"></span>
+                    </div>
+                    <div class="wireframe-title-bar"></div>
+                    <div class="wireframe-subtitle-bar"></div>
+                    <div class="wireframe-cards-grid">
+                      <div class="wire-card active"></div>
+                      <div class="wire-card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-content-side">
+                <div class="project-eyebrow">
+                  <span class="project-num">06</span>
+                  <span class="project-cat-badge">Creative UI &bull; Competition Entries</span>
+                </div>
+                <h3 class="project-headline">Portfolio &amp; Web Design Competition Showcases</h3>
+                <p class="project-summary">
+                  Responsive landing templates and competition entries crafted using pure HTML, modern CSS, and lightweight JavaScript, featuring creative concepts for FIFA World Cup 2026 and ISRO space exploration.
+                </p>
+                <div class="project-tech-tags">
+                  <span class="tag">HTML5 / CSS3</span>
+                  <span class="tag">Vanilla JavaScript</span>
+                  <span class="tag">FIFA 2026 Theme</span>
                   <span class="tag">ISRO Concept</span>
+                  <span class="tag">Motion Design</span>
                 </div>
-                <div class="project-footer">
-                  <span class="view-details-link">
-                    <span>View Project Details</span>
-                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="project-cta-row">
+                  <span class="case-study-btn">
+                    <span>Inspect Case Study</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -677,47 +804,47 @@
             </div>
           </article>
 
-          <!-- PROJECT 05: Automation Scripts & Data Pipelines -->
-          <article class="project-card reveal-item" data-project-id="automation-pipelines" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Automation Scripts &amp; Data Pipelines">
-            <div class="project-card-inner">
-              <div class="project-preview-frame editor-preview">
-                <div class="preview-header">
-                  <span class="preview-dot red"></span>
-                  <span class="preview-dot yellow"></span>
-                  <span class="preview-dot green"></span>
-                  <span class="preview-title">pipeline.py &bull; terminal execution</span>
+          <!-- PROJECT 07: Automation Scripts & Data Pipelines -->
+          <article class="project-showcase-card reveal-item" data-project-id="automation-pipelines" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for Automation Scripts">
+            <div class="project-card-layout">
+              <div class="project-preview-side">
+                <div class="preview-chrome">
+                  <span class="chrome-dot red"></span>
+                  <span class="chrome-dot yellow"></span>
+                  <span class="chrome-dot green"></span>
+                  <span class="chrome-title">pipeline.py &bull; automated data flow</span>
                 </div>
-                <div class="code-editor-body">
-                  <div class="code-line"><span class="code-kw">import</span> <span class="code-lib">csv, requests</span></div>
-                  <div class="code-line"><span class="code-kw">def</span> <span class="code-fn">parse_market_data</span>(source):</div>
-                  <div class="code-line indent-1"><span class="code-var">records</span> = extract_entries(source)</div>
-                  <div class="code-line indent-1"><span class="code-kw">return</span> clean_pipeline(<span class="code-var">records</span>)</div>
-                  <div class="terminal-output-box">
-                    <span class="term-prompt">$</span> python pipeline.py --run<br />
-                    <span class="term-status ok">[OK]</span> 142 records parsed &bull; CSV pipeline complete
+                <div class="preview-canvas-mockup terminal-simple-mockup">
+                  <div class="code-line"><span class="c-kw">import</span> <span class="c-lib">csv, requests, json</span></div>
+                  <div class="code-line"><span class="c-kw">def</span> <span class="c-fn">extract_and_sanitize</span>(source_stream):</div>
+                  <div class="code-line indent-1"><span class="c-var">rows</span> = parse_raw_data(source_stream)</div>
+                  <div class="code-line indent-1"><span class="c-kw">return</span> export_tabular_dataset(<span class="c-var">rows</span>)</div>
+                  <div class="terminal-log-box">
+                    <span class="term-prompt">$</span> python pipeline.py --batch-run<br />
+                    <span class="term-status ok">[OK]</span> 142 records cleansed &bull; CSV pipeline complete
                   </div>
                 </div>
               </div>
 
-              <div class="project-content">
-                <div class="project-meta">
-                  <span class="project-number">05</span>
-                  <span class="badge-category">Python / Automation</span>
+              <div class="project-content-side">
+                <div class="project-eyebrow">
+                  <span class="project-num">07</span>
+                  <span class="project-cat-badge">Python &bull; Automation</span>
                 </div>
-                <h3 class="project-title">Automation Scripts &amp; Data Pipelines</h3>
-                <p class="project-description">
-                  Python automation scripts for small tasks including web data scraping, CSV parsing, data formatting, and preprocessing pipelines used in student projects.
+                <h3 class="project-headline">Automation Scripts &amp; Data Pipelines</h3>
+                <p class="project-summary">
+                  Python automation utilities for task automation, web data scraping, CSV normalization, and lightweight data pipelines used for rapid data extraction across projects.
                 </p>
-                <div class="project-tags">
+                <div class="project-tech-tags">
                   <span class="tag">Python</span>
                   <span class="tag">Web Scraping</span>
                   <span class="tag">CSV Parsing</span>
-                  <span class="tag">Data Preprocessing</span>
+                  <span class="tag">Data Normalization</span>
                 </div>
-                <div class="project-footer">
-                  <span class="view-details-link">
-                    <span>View Project Details</span>
-                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="project-cta-row">
+                  <span class="case-study-btn">
+                    <span>Inspect Case Study</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -727,49 +854,49 @@
             </div>
           </article>
 
-          <!-- PROJECT 06: AI-Assisted Prototyping & Antigravity Workflows -->
-          <article class="project-card reveal-item" data-project-id="ai-workflows" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for AI-Assisted Workflows &amp; Prototyping">
-            <div class="project-card-inner">
-              <div class="project-preview-frame ai-workflow-preview">
-                <div class="preview-header">
-                  <span class="preview-dot red"></span>
-                  <span class="preview-dot yellow"></span>
-                  <span class="preview-dot green"></span>
-                  <span class="preview-title">antigravity_workflow &bull; rapid prototyping</span>
+          <!-- PROJECT 08: AI-Assisted Prototyping & Antigravity Workflows -->
+          <article class="project-showcase-card reveal-item" data-project-id="ai-workflows" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for AI-Assisted Prototyping">
+            <div class="project-card-layout">
+              <div class="project-preview-side">
+                <div class="preview-chrome">
+                  <span class="chrome-dot red"></span>
+                  <span class="chrome-dot yellow"></span>
+                  <span class="chrome-dot green"></span>
+                  <span class="chrome-title">antigravity &bull; agentic development</span>
                 </div>
-                <div class="workflow-mockup-body">
-                  <div class="workflow-node-row">
-                    <div class="workflow-node active">Spec Architecture</div>
-                    <div class="workflow-arrow">&rarr;</div>
-                    <div class="workflow-node">Component Logic</div>
-                    <div class="workflow-arrow">&rarr;</div>
-                    <div class="workflow-node">Motion Polish</div>
+                <div class="preview-canvas-mockup agentic-mockup">
+                  <div class="workflow-flow-diagram">
+                    <div class="flow-step-box active">Spec Architecture</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step-box">Component Engineering</div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step-box">Motion &amp; QA</div>
                   </div>
-                  <div class="workflow-status-bar">
-                    <span class="status-pulse-cyan"></span> Agentic Workflow &bull; High Performance
+                  <div class="flow-summary-tag">
+                    <span class="pulse-point"></span> Zero-Dependency Vanilla Craft &bull; 60 FPS
                   </div>
                 </div>
               </div>
 
-              <div class="project-content">
-                <div class="project-meta">
-                  <span class="project-number">06</span>
-                  <span class="badge-category">AI Engineering / Web</span>
+              <div class="project-content-side">
+                <div class="project-eyebrow">
+                  <span class="project-num">08</span>
+                  <span class="project-cat-badge">AI Workflows &bull; Performance</span>
                 </div>
-                <h3 class="project-title">AI-Assisted Prototyping &amp; Antigravity Workflows</h3>
-                <p class="project-description">
-                  Experimenting with modern AI agent workflows (Antigravity) and prompt engineering to rapidly scaffold modular frontend architectures and performant web tools.
+                <h3 class="project-headline">AI-Assisted Prototyping &amp; Antigravity Workflows</h3>
+                <p class="project-summary">
+                  Exploring agentic AI pair programming (Antigravity) and structured prompt architecture to rapidly scaffold modular frontend architectures and ultra-fast web interfaces.
                 </p>
-                <div class="project-tags">
+                <div class="project-tech-tags">
                   <span class="tag">AI Workflows</span>
                   <span class="tag">Antigravity</span>
                   <span class="tag">Frontend Architecture</span>
                   <span class="tag">Vanilla JS</span>
                 </div>
-                <div class="project-footer">
-                  <span class="view-details-link">
-                    <span>View Project Details</span>
-                    <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="project-cta-row">
+                  <span class="case-study-btn">
+                    <span>Inspect Case Study</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -782,98 +909,122 @@
       </div>
     </section>
 
-    <!-- EVENTS & COMPETITIONS SECTION -->
-    <section class="events-section section-padding" id="events" aria-labelledby="eventsHeading">
+    <!-- EXPERIENCE & CHRONOLOGY SECTION -->
+    <section class="experience-section section-padding" id="experience" aria-labelledby="experienceHeading">
       <div class="container">
         <div class="section-header reveal-item">
-          <div class="section-badge">Beyond The Code</div>
-          <h2 class="section-title" id="eventsHeading">Events, Competitions &amp; Exhibitions.</h2>
-          <p class="section-subtitle">Active participation in technology events, hackathons, presentations, and creative competitions.</p>
+          <div class="section-badge">CHRONOLOGY</div>
+          <h2 class="section-title" id="experienceHeading">Competitions, exhibitions &amp; events.</h2>
+          <p class="section-subtitle">Active engagement across technology events, design competitions, and technical demonstrations.</p>
         </div>
 
-        <div class="events-timeline">
-          <!-- Event 1: AI Kavach -->
-          <div class="timeline-item reveal-item">
-            <div class="timeline-marker">
-              <span class="timeline-dot"></span>
+        <div class="editorial-timeline">
+          <!-- Timeline Entry 1: AI Kavach -->
+          <div class="timeline-row reveal-item">
+            <div class="timeline-time-col">
+              <span class="timeline-year">EVENT</span>
+              <span class="timeline-date-label">Registered / Participated</span>
             </div>
-            <div class="timeline-card">
-              <div class="timeline-card-header">
-                <span class="timeline-tag tag-purple">AI &amp; Technology Event</span>
-                <span class="timeline-status">Registered / Participated</span>
-              </div>
-              <h3 class="timeline-title">AI Kavach</h3>
-              <p class="timeline-desc">
-                Participation and preparation for AI Kavach, focusing on artificial intelligence applications, security-oriented machine learning discussions, and emerging technology concepts.
-              </p>
-              <div class="timeline-meta-chips">
-                <span class="meta-chip">Artificial Intelligence</span>
-                <span class="meta-chip">Technology Event</span>
-              </div>
+            <div class="timeline-spine">
+              <span class="spine-dot crimson"></span>
             </div>
-          </div>
-
-          <!-- Event 2: Web Design Competition -->
-          <div class="timeline-item reveal-item">
-            <div class="timeline-marker">
-              <span class="timeline-dot"></span>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-card-header">
-                <span class="timeline-tag tag-cyan">Frontend Competition</span>
-                <span class="timeline-status">Competition Entry</span>
-              </div>
-              <h3 class="timeline-title">Web Design Competition</h3>
-              <p class="timeline-desc">
-                Frontend design and responsive implementation for competition topics including a dynamic <strong>FIFA World Cup 2026</strong> portal concept and an <strong>ISRO</strong> space research showcase layout.
-              </p>
-              <div class="timeline-meta-chips">
-                <span class="meta-chip">HTML5 / CSS3</span>
-                <span class="meta-chip">UI/UX Design</span>
-                <span class="meta-chip">FIFA 2026 &bull; ISRO Themes</span>
+            <div class="timeline-card-col">
+              <div class="event-card">
+                <div class="event-meta-bar">
+                  <span class="event-category-pill pill-crimson">AI &amp; TECHNOLOGY</span>
+                  <span class="event-institution">Technology Initiative</span>
+                </div>
+                <h3 class="event-title">AI Kavach</h3>
+                <p class="event-description">
+                  Participation and active preparation for AI Kavach, focusing on artificial intelligence capabilities, secure algorithmic concepts, and emerging machine learning discussions.
+                </p>
+                <div class="event-tags-row">
+                  <span class="event-chip">Artificial Intelligence</span>
+                  <span class="event-chip">Technology Event</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Event 3: Video Editing Event -->
-          <div class="timeline-item reveal-item">
-            <div class="timeline-marker">
-              <span class="timeline-dot"></span>
+          <!-- Timeline Entry 2: Web Design Competition -->
+          <div class="timeline-row reveal-item">
+            <div class="timeline-time-col">
+              <span class="timeline-year">CONTEST</span>
+              <span class="timeline-date-label">Competition Entry</span>
             </div>
-            <div class="timeline-card">
-              <div class="timeline-card-header">
-                <span class="timeline-tag tag-magenta">Media &amp; Creative</span>
-                <span class="timeline-status">Participated</span>
-              </div>
-              <h3 class="timeline-title">Video Editing Event</h3>
-              <p class="timeline-desc">
-                Participation in video editing and digital media creation, focusing on pacing, visual storytelling, transitions, and audio-visual synchronization for institutional events.
-              </p>
-              <div class="timeline-meta-chips">
-                <span class="meta-chip">Video Editing</span>
-                <span class="meta-chip">Visual Pacing</span>
-                <span class="meta-chip">Creative Media</span>
+            <div class="timeline-spine">
+              <span class="spine-dot indigo"></span>
+            </div>
+            <div class="timeline-card-col">
+              <div class="event-card">
+                <div class="event-meta-bar">
+                  <span class="event-category-pill pill-indigo">FRONTEND DESIGN</span>
+                  <span class="event-institution">Web Competition</span>
+                </div>
+                <h3 class="event-title">Web Design Competition</h3>
+                <p class="event-description">
+                  Frontend responsive implementation for design competition challenges, creating dynamic portal prototypes for the <strong>FIFA World Cup 2026</strong> and the <strong>ISRO</strong> space research showcase.
+                </p>
+                <div class="event-tags-row">
+                  <span class="event-chip">HTML5 / CSS3</span>
+                  <span class="event-chip">UI/UX Prototyping</span>
+                  <span class="event-chip">FIFA 2026 &bull; ISRO Concepts</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Event 4: National Exhibition / School Technology Project -->
-          <div class="timeline-item reveal-item">
-            <div class="timeline-marker">
-              <span class="timeline-dot"></span>
+          <!-- Timeline Entry 3: Video Editing Event -->
+          <div class="timeline-row reveal-item">
+            <div class="timeline-time-col">
+              <span class="timeline-year">MEDIA</span>
+              <span class="timeline-date-label">Participated</span>
             </div>
-            <div class="timeline-card">
-              <div class="timeline-card-header">
-                <span class="timeline-tag tag-blue">Project Presentation</span>
-                <span class="timeline-status">Presented</span>
+            <div class="timeline-spine">
+              <span class="spine-dot ivory"></span>
+            </div>
+            <div class="timeline-card-col">
+              <div class="event-card">
+                <div class="event-meta-bar">
+                  <span class="event-category-pill pill-ivory">DIGITAL MEDIA</span>
+                  <span class="event-institution">Institutional Event</span>
+                </div>
+                <h3 class="event-title">Video Editing &amp; Visual Storytelling Event</h3>
+                <p class="event-description">
+                  Creative participation in video editing and digital media production, focusing on visual pacing, narrative rhythm, and audio-visual synchronization for institutional event presentations.
+                </p>
+                <div class="event-tags-row">
+                  <span class="event-chip">Video Production</span>
+                  <span class="event-chip">Visual Pacing</span>
+                  <span class="event-chip">Media Craft</span>
+                </div>
               </div>
-              <h3 class="timeline-title">National Exhibition / School Technology Project</h3>
-              <p class="timeline-desc">
-                School-level national exhibition presentation showcasing technology project architecture, software demonstration, and structured presentation materials.
-              </p>
-              <div class="timeline-meta-chips">
-                <span class="meta-chip">Software Demonstration</span>
-                <span class="meta-chip">Technical Exhibition</span>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 4: National Exhibition / School Technology Project -->
+          <div class="timeline-row reveal-item">
+            <div class="timeline-time-col">
+              <span class="timeline-year">EXPO</span>
+              <span class="timeline-date-label">Presented</span>
+            </div>
+            <div class="timeline-spine">
+              <span class="spine-dot indigo"></span>
+            </div>
+            <div class="timeline-card-col">
+              <div class="event-card">
+                <div class="event-meta-bar">
+                  <span class="event-category-pill pill-indigo">PROJECT PRESENTATION</span>
+                  <span class="event-institution">National Exhibition</span>
+                </div>
+                <h3 class="event-title">National Exhibition / Technology Project Showcase</h3>
+                <p class="event-description">
+                  Technical presentation showcasing software engineering architecture, live system demonstration, and structured visual materials for school-level national technology exhibition.
+                </p>
+                <div class="event-tags-row">
+                  <span class="event-chip">Software Demonstration</span>
+                  <span class="event-chip">Technical Architecture</span>
+                </div>
               </div>
             </div>
           </div>
@@ -885,57 +1036,57 @@
     <section class="achievements-section section-padding" id="achievements" aria-labelledby="achievementsHeading">
       <div class="container">
         <div class="section-header reveal-item">
-          <div class="section-badge">Milestones</div>
-          <h2 class="section-title" id="achievementsHeading">Achievements &amp; Credentials.</h2>
-          <p class="section-subtitle">Verified certifications, competitive awards, and academic milestones.</p>
+          <div class="section-badge">CREDENTIALS</div>
+          <h2 class="section-title" id="achievementsHeading">Verified achievements &amp; certifications.</h2>
+          <p class="section-subtitle">Formal certifications, competitive awards, and documented technical milestones.</p>
         </div>
 
-        <div class="achievements-grid">
-          <!-- Achievement 1: CBSE AI Certification -->
-          <div class="achievement-card reveal-item">
-            <div class="achievement-icon-wrap icon-ai">
-              <span class="ach-icon">📜</span>
-            </div>
-            <div class="achievement-content">
-              <div class="ach-badge">Academic Certification</div>
-              <h3 class="ach-title">CBSE Artificial Intelligence Certification</h3>
-              <p class="ach-desc">Formal certification and curriculum completion in Artificial Intelligence fundamentals, ethics, and practical applications under CBSE.</p>
-            </div>
-          </div>
-
-          <!-- Achievement 2: Microsoft AI / ML Certifications -->
-          <div class="achievement-card reveal-item">
-            <div class="achievement-icon-wrap icon-ms">
-              <span class="ach-icon">🔷</span>
-            </div>
-            <div class="achievement-content">
-              <div class="ach-badge">Industry Learning</div>
-              <h3 class="ach-title">Microsoft AI / ML Certifications</h3>
-              <p class="ach-desc">Completed learning tracks and foundational certifications in Machine Learning and AI cloud technologies on Microsoft learning ecosystem.</p>
+        <div class="credentials-grid">
+          <!-- Credential 1: CBSE AI Certification -->
+          <div class="credential-card reveal-item">
+            <div class="credential-icon-box">📜</div>
+            <div class="credential-info">
+              <span class="credential-type">CURRICULUM CERTIFICATION</span>
+              <h3 class="credential-title">CBSE Artificial Intelligence Certification</h3>
+              <p class="credential-summary">
+                Certified in foundational Artificial Intelligence concepts, ethics, algorithmic problem solving, and practical AI application models under the CBSE curriculum.
+              </p>
             </div>
           </div>
 
-          <!-- Achievement 3: Google / Kaggle AI Learning -->
-          <div class="achievement-card reveal-item">
-            <div class="achievement-icon-wrap icon-kaggle">
-              <span class="ach-icon">📊</span>
-            </div>
-            <div class="achievement-content">
-              <div class="ach-badge">Competition &amp; Learning</div>
-              <h3 class="ach-title">Google / Kaggle AI Learning &amp; Participation</h3>
-              <p class="ach-desc">Active exploration of machine learning workflows, data analysis modules, and algorithmic problem-solving in Kaggle community challenges.</p>
+          <!-- Credential 2: Microsoft AI / ML Certifications -->
+          <div class="credential-card reveal-item">
+            <div class="credential-icon-box">🔷</div>
+            <div class="credential-info">
+              <span class="credential-type">INDUSTRY LEARNING TRACK</span>
+              <h3 class="credential-title">Microsoft AI / ML Certifications</h3>
+              <p class="credential-summary">
+                Completed foundational AI and Machine Learning modules within the Microsoft learning ecosystem, exploring cloud intelligence, computer vision, and predictive models.
+              </p>
             </div>
           </div>
 
-          <!-- Achievement 4: Abacus Competition Award -->
-          <div class="achievement-card reveal-item">
-            <div class="achievement-icon-wrap icon-award">
-              <span class="ach-icon">🥈</span>
+          <!-- Credential 3: Google / Kaggle AI Learning -->
+          <div class="credential-card reveal-item">
+            <div class="credential-icon-box">📊</div>
+            <div class="credential-info">
+              <span class="credential-type">COMPETITIVE LEARNING</span>
+              <h3 class="credential-title">Google / Kaggle AI Learning &amp; Challenges</h3>
+              <p class="credential-summary">
+                Active engagement in Kaggle machine learning tutorials, structured data processing notebooks, and competitive data analysis challenges.
+              </p>
             </div>
-            <div class="achievement-content">
-              <div class="ach-badge highlight-silver">2nd Prize Award</div>
-              <h3 class="ach-title">Abacus Competition — 2nd Prize</h3>
-              <p class="ach-desc">Awarded 2nd Prize in competitive mental arithmetic and abacus calculation, demonstrating early speed, focus, and numerical problem-solving aptitude.</p>
+          </div>
+
+          <!-- Credential 4: Abacus Competition Award -->
+          <div class="credential-card reveal-item">
+            <div class="credential-icon-box">🥈</div>
+            <div class="credential-info">
+              <span class="credential-type highlight-award">COMPETITIVE AWARD</span>
+              <h3 class="credential-title">Abacus Competition — 2nd Prize</h3>
+              <p class="credential-summary">
+                Awarded 2nd Prize in competitive mental arithmetic and abacus calculation, demonstrating mathematical aptitude, speed, and analytical focus.
+              </p>
             </div>
           </div>
         </div>
@@ -945,112 +1096,78 @@
     <!-- CONTACT SECTION -->
     <section class="contact-section section-padding" id="contact" aria-labelledby="contactHeading">
       <div class="container">
-        <div class="section-header reveal-item">
-          <div class="section-badge">Get in touch</div>
-          <h2 class="section-title" id="contactHeading">Let's build something great.</h2>
-          <p class="section-subtitle">Have a project idea, collaboration or just want to connect? Send me a message.</p>
-        </div>
-
-        <div class="contact-layout">
-          <!-- Left Column: Verified Contact Information & Direct Action Buttons -->
+        <div class="contact-editorial-layout">
+          <!-- Left Column: Direct Inquiries & Details -->
           <div class="contact-info-panel reveal-item">
-            <h3 class="panel-heading">Direct Contact</h3>
-            <p class="panel-lead">
-              Feel free to reach out for student collaborations, web development opportunities, tech competitions, or project discussions.
+            <div class="section-badge">COMMISSION &amp; CONNECT</div>
+            <h2 class="contact-headline" id="contactHeading">
+              HAVE AN IDEA? <br />
+              <span class="title-highlight">LET'S BUILD SOMETHING GREAT.</span>
+            </h2>
+            <p class="contact-lead">
+              I am open to discussing innovative web projects, software builds, on-device AI exploration, and technical collaborations. Reach out directly or dispatch a note below.
             </p>
 
-            <div class="contact-cards-list">
-              <!-- Email Card -->
-              <div class="contact-item-card">
-                <div class="contact-item-icon icon-email">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                </div>
-                <div class="contact-item-text">
-                  <span class="contact-item-label">Email Address</span>
-                  <a href="mailto:ansh7224@outlook.com" class="contact-item-link">ansh7224@outlook.com</a>
+            <div class="contact-methods-list">
+              <div class="contact-method-card">
+                <div class="method-icon-box">✉️</div>
+                <div class="method-details">
+                  <span class="method-label">DIRECT EMAIL</span>
+                  <a href="mailto:ansh7224@outlook.com" class="method-link">ansh7224@outlook.com</a>
                 </div>
               </div>
 
-              <!-- Phone Card -->
-              <div class="contact-item-card">
-                <div class="contact-item-icon icon-phone">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
-                </div>
-                <div class="contact-item-text">
-                  <span class="contact-item-label">Phone / WhatsApp</span>
-                  <a href="tel:+919616757224" class="contact-item-link">+91 9616757224</a>
-                </div>
-              </div>
-
-              <!-- Location Card -->
-              <div class="contact-item-card">
-                <div class="contact-item-icon icon-location">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                </div>
-                <div class="contact-item-text">
-                  <span class="contact-item-label">Location &amp; Status</span>
-                  <span class="contact-item-val">Lucknow, India &bull; Open to Remote</span>
+              <div class="contact-method-card">
+                <div class="method-icon-box">📍</div>
+                <div class="method-details">
+                  <span class="method-label">LOCATION &amp; WORKING MODE</span>
+                  <span class="method-text">Lucknow, India &bull; Open to Remote Collaborations</span>
                 </div>
               </div>
             </div>
 
-            <!-- Direct Contact Action Buttons -->
-            <div class="direct-action-buttons">
-              <a href="mailto:ansh7224@outlook.com" class="btn btn-primary btn-action">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
+            <div class="contact-action-row">
+              <a href="mailto:ansh7224@outlook.com" class="btn btn-primary">
+                <span>EMAIL ME DIRECTLY</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
-                <span>Email Me</span>
-              </a>
-              <a href="https://wa.me/919616757224" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-action">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
-                <span>Call / WhatsApp</span>
               </a>
             </div>
           </div>
 
-          <!-- Right Column: Interactive Mailto Message Form -->
+          <!-- Right Column: Interactive Contact Form -->
           <div class="contact-form-panel reveal-item">
             <form class="contact-form" id="contactForm" novalidate>
-              <div class="form-group">
-                <label for="senderName" class="form-label">Your Name <span class="required">*</span></label>
-                <input type="text" id="senderName" name="name" class="form-input" placeholder="e.g. Alex Sharma" required />
-                <span class="field-error" id="nameError" aria-live="polite"></span>
+              <div class="form-field-group">
+                <label for="senderName" class="form-label">YOUR NAME <span class="required">*</span></label>
+                <input type="text" id="senderName" name="name" class="form-input" placeholder="e.g. Elena Rostova" required />
+                <span class="field-error-msg" id="nameError" aria-live="polite"></span>
               </div>
 
-              <div class="form-group">
-                <label for="emailSubject" class="form-label">Subject <span class="required">*</span></label>
-                <input type="text" id="emailSubject" name="subject" class="form-input" placeholder="e.g. Collaboration on Web Project" required />
-                <span class="field-error" id="subjectError" aria-live="polite"></span>
+              <div class="form-field-group">
+                <label for="emailSubject" class="form-label">SUBJECT <span class="required">*</span></label>
+                <input type="text" id="emailSubject" name="subject" class="form-input" placeholder="e.g. Collaboration on AI Web Application" required />
+                <span class="field-error-msg" id="subjectError" aria-live="polite"></span>
               </div>
 
-              <div class="form-group">
-                <label for="emailMessage" class="form-label">Message <span class="required">*</span></label>
-                <textarea id="emailMessage" name="message" class="form-textarea" rows="5" placeholder="Write your message here..." required></textarea>
-                <span class="field-error" id="messageError" aria-live="polite"></span>
+              <div class="form-field-group">
+                <label for="emailMessage" class="form-label">MESSAGE <span class="required">*</span></label>
+                <textarea id="emailMessage" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project, timeline, or idea..." required></textarea>
+                <span class="field-error-msg" id="messageError" aria-live="polite"></span>
               </div>
 
               <button type="submit" class="btn btn-primary btn-block" id="sendBtn">
-                <span>Send Message</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <span>SEND MESSAGE</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="22" y1="2" x2="11" y2="13"></line>
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
               </button>
 
-              <p class="form-notice">
-                <span class="notice-icon">&#8505;</span> Submitting compiles your note and opens your device's default email client addressed to <strong>ansh7224@outlook.com</strong>.
+              <p class="form-disclaimer">
+                <span class="disclaimer-icon">&#8505;</span> Submitting formats your note and triggers your device's default email client addressed to <strong>ansh7224@outlook.com</strong>.
               </p>
             </form>
           </div>
@@ -1059,21 +1176,21 @@
     </section>
   </main>
 
-  <!-- Interactive Project Details Modal -->
+  <!-- Interactive Project Case Study Modal -->
   <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-backdrop" id="modalBackdrop"></div>
     <div class="modal-container">
       <div class="modal-card">
-        <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="Close project modal">&times;</button>
+        <button class="modal-close-btn" id="modalCloseBtn" type="button" aria-label="Close case study modal">&times;</button>
         <div class="modal-header">
-          <span class="modal-category" id="modalCategory">Project Category</span>
+          <span class="modal-category" id="modalCategory">CASE STUDY</span>
           <h3 class="modal-title" id="modalTitle">Project Title</h3>
         </div>
         <div class="modal-body" id="modalBody">
           <!-- Dynamic Content Injected via script.js -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary modal-close-action" id="modalCloseAction">Close</button>
+          <button type="button" class="btn btn-secondary modal-close-action" id="modalCloseAction">Close Case Study</button>
         </div>
       </div>
     </div>
@@ -1082,32 +1199,34 @@
   <!-- Notification Toast Container -->
   <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
-  <!-- Site Footer -->
+  <!-- Minimal Premium Footer -->
   <footer class="site-footer">
     <div class="container footer-container">
-      <div class="footer-branding">
-        <div class="brand">
-          <span class="brand-monogram">AS</span>
-          <div class="brand-text">
-            <span class="brand-name">Ansh Singh</span>
-            <span class="brand-role">Student Developer</span>
-          </div>
-        </div>
-        <p class="footer-school">Student Developer &bull; Army Public School SP Marg, Lucknow</p>
+      <div class="footer-left">
+        <a href="#hero" class="footer-brand">
+          <span class="footer-monogram">ANSH<span class="accent-dot">.</span></span>
+        </a>
+        <p class="footer-tagline">Building digital experiences that move people.</p>
       </div>
 
-      <div class="footer-center">
-        <p class="footer-quote">&ldquo;Built with curiosity &amp; code.&rdquo;</p>
+      <div class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-right">
         <p class="footer-copy">&copy; 2026 Ansh Singh. All rights reserved.</p>
-      </div>
-
-      <div class="footer-back-top">
         <a href="#hero" class="back-to-top-btn" aria-label="Back to top">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span>Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="12" y1="19" x2="12" y2="5"></line>
             <polyline points="5 12 12 5 19 12"></polyline>
           </svg>
-          <span>Top</span>
         </a>
       </div>
     </div>
